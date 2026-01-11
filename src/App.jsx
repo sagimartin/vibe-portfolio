@@ -10,6 +10,7 @@ import ThemeSwitch from './components/ThemeSwitch.jsx'
 import WorkModal from './components/WorkModal.jsx'
 import { COPY, PROJECT_IMAGES, PROJECT_TRANSLATIONS, TAG_LABELS } from './content/index.js'
 import projectsData from './data/projects.json'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -279,6 +280,7 @@ function App() {
         linkLabel={strings.work.linkLabel}
         onClose={handleCloseProject}
       />
+      <Analytics />
     </>
   )
 }
