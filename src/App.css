@@ -273,6 +273,7 @@ section {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 6px 16px rgba(0, 0, 0, 0.12);
   font-weight: 600;
+  padding: .6rem 1.125rem;
 }
 
 .segmented-item:hover {
@@ -1428,6 +1429,7 @@ footer .container {
 @media (max-width: 768px) {
   :root {
     --nav-pill-height: 56px;
+    --theme-switch-height: 40px;
   }
 
   .container {
