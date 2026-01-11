@@ -1426,11 +1426,6 @@ footer .container {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --nav-pill-height: 56px;
-    --theme-switch-height: var(--nav-pill-height);
-  }
-
   .container {
     padding-left: 0;
     padding-right: 0;
@@ -1500,6 +1495,11 @@ footer .container {
   .work-modal-brand {
     width: 180px;
     height: 76px;
+  }
+
+  .segmented-nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
