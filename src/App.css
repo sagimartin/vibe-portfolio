@@ -1426,6 +1426,10 @@ footer .container {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --nav-pill-height: 56px;
+  }
+
   .container {
     padding-left: 0;
     padding-right: 0;
@@ -1441,7 +1445,7 @@ footer .container {
   }
 
   .hero-title {
-    font-size: clamp(42px, 12vw, 64px);
+    font-size: clamp(36px, 10vw, 56px);
     line-height: 1.1;
     text-align: left;
   }
