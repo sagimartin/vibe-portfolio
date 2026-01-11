@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "smellgo-hu",
+      "title": "SmellGo.hu",
+      "summary": "Custom car air fresheners",
+      "description": "The website lets customers turn their own photos into premium, personalized car air fresheners. From seamless photo uploads to custom scent selection, the experience is designed to feel effortless and playful.\n\nYou might recognize the brand from 🦈 'Shark Tank Hungary'.",
+      "tags": [
+        "Shopify",
+        "Debutify theme",
+        "Stripe",
+        "ApplePay",
+        "GooglePay",
+        "Custom CSS",
+        "Custom Scripts",
+        "Digiloop Pickup & Delivery",
+        "UploadKit"
+      ],
+      "badge": "Shopify",
+      "imageKey": "smellgo",
+      "url": "https://smellgo.hu"
+    },
+    {
+      "id": "viverte-com",
+      "title": "Viverte.com",
+      "summary": "Personalized jewelry design",
+      "description": "Users can collaborate with expert designers to create bespoke pieces, using high-quality materials tailored to their preferences.\n\nThe project integrates a sleek, user-friendly design interface, allowing customers to preview and adjust their designs before finalizing.",
+      "tags": [
+        "Shopify",
+        "Impulse theme",
+        "Szamlazz.hu",
+        "SimplePay",
+        "Custom CSS",
+        "Custom Scripts"
+      ],
+      "badge": "Shopify",
+      "imageKey": "viverte",
+      "url": "https://viverte.com"
+    },
+    {
+      "id": "pemdelian-com",
+      "title": "PemDelian.com",
+      "summary": "Premium skincare brand",
+      "description": "Pem Delian is a premium skincare and cosmetics brand built for multi-market EU sales.\n\nThe webshop supports multiple languages and currencies, and features extensive custom development — from tailored frontend components and a product quiz (Routine Finder) to dynamic upsell and gift logic.\n\nExternal fulfillment providers are seamlessly integrated, enabling scalable international logistics while preserving a high-end, conversion-driven customer experience.",
+      "tags": [
+        "Shopify",
+        "Cosmo theme",
+        "Markets",
+        "Multi-language",
+        "Routine Finder",
+        "Gift Selector",
+        "Upsell",
+        "Custom Code",
+        "Billingo",
+        "Digiloop Pickup & Delivery",
+        "iLogistic",
+        "Shopify Payments",
+        "Apple Pay",
+        "Google Pay",
+        "Shop Pay"
+      ],
+      "badge": "Shopify",
+      "imageKey": "pemdelian",
+      "url": "https://pemdelian.com"
+    }
+  ]
+}

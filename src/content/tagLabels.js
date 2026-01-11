@@ -1,0 +1,42 @@
+export const TAG_LABELS = {
+  en: {
+    Shopify: 'Shopify',
+    Personalization: 'Personalization',
+    'Photo Uploads': 'Photo Uploads',
+    Jewelry: 'Jewelry',
+    'Design UI': 'Design UI',
+    Markets: 'Markets',
+    Upsell: 'Upsell'
+  },
+  hu: {
+    Shopify: 'Shopify',
+    Personalization: 'Személyre szabás',
+    'Photo Uploads': 'Fotó feltöltés',
+    Jewelry: 'Ékszer',
+    'Design UI': 'Tervező UI',
+    Markets: 'Piacok',
+    Upsell: 'Upsell',
+    'Debutify theme': 'Debutify téma',
+    Stripe: 'Stripe',
+    ApplePay: 'Apple Pay',
+    GooglePay: 'Google Pay',
+    'Custom CSS': 'Egyedi CSS',
+    'Custom Scripts': 'Egyedi szkriptek',
+    'Digiloop Pickup & Delivery': 'Digiloop Pickup & Delivery',
+    UploadKit: 'UploadKit',
+    'Impulse theme': 'Impulse téma',
+    'Szamlazz.hu': 'Számlázz.hu',
+    SimplePay: 'SimplePay',
+    'Cosmo theme': 'Cosmo téma',
+    'Multi-language': 'Többnyelvű',
+    'Routine Finder': 'Routine Finder',
+    'Gift Selector': 'Gift Selector',
+    'Custom Code': 'Egyedi kód',
+    Billingo: 'Billingo',
+    iLogistic: 'iLogistic',
+    'Shopify Payments': 'Shopify Payments',
+    'Apple Pay': 'Apple Pay',
+    'Google Pay': 'Google Pay',
+    'Shop Pay': 'Shop Pay'
+  }
+}
