@@ -1498,8 +1498,7 @@ footer .container {
   }
 
   .segmented-nav {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
   }
 }
 
