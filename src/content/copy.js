@@ -21,7 +21,7 @@ export const COPY = {
       ctaMessage: 'Send message',
       ctaCall: 'Book a call',
       replies: 'Usually replies in ~2-3h',
-      pills: ['Budapest · Remote EU', 'Shopify · Frontend'],
+      pills: ['Budapest · Remote EU'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' }
@@ -56,7 +56,7 @@ export const COPY = {
       ctaMessage: 'Írj üzenetet',
       ctaCall: 'Foglalj időpontot',
       replies: 'Általában 2-3 órán belül válaszolok',
-      pills: ['Budapest · EU remote', 'Shopify · Frontend'],
+      pills: ['Budapest · EU remote'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' }
