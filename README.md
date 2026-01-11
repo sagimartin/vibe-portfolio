@@ -3,11 +3,15 @@
 Personal portfolio built with Vite + React.
 
 ## Quick Start
-
 ```bash
 npm install
 npm run dev
 ```
+
+## Analytics
+
+Vercel Analytics is enabled via `<Analytics />` in `src/App.jsx`. Deploy to Vercel
+to start collecting page views.
 
 ## Scripts
 
