@@ -5,7 +5,6 @@ import HeroSection from './components/HeroSection.jsx'
 import WorkSection from './components/WorkSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
-import LanguageSwitch from './components/LanguageSwitch.jsx'
 import ThemeSwitch from './components/ThemeSwitch.jsx'
 import WorkModal from './components/WorkModal.jsx'
 import { COPY, PROJECT_IMAGES, PROJECT_TRANSLATIONS, TAG_LABELS } from './content/index.js'
@@ -190,7 +189,7 @@ function App() {
         onSelect={handleSelectSection}
         isVisible={headerVisible}
       />
-      <ThemeSwitch isVisible={themeSwitchVisible} />
+      {isDesktop ? <ThemeSwitch isVisible={themeSwitchVisible} /> : null}
       <main>
         <HeroSection
           greeting={strings.hero.greeting}
@@ -214,17 +213,18 @@ function App() {
           ctaMessage={strings.contact.ctaMessage}
           ctaCall={strings.contact.ctaCall}
           replies={strings.contact.replies}
-          pills={strings.contact.pills}
-          socials={strings.contact.socials}
           messageSubject={strings.contact.messageSubject}
           callLink={strings.contact.callLink}
-          metaVisible={showCredits}
         />
       </main>
-      <Footer isVisible={showCredits} text={strings.footer.credits} />
-      <div className={showCredits ? 'language-corner is-visible' : 'language-corner'}>
-        <LanguageSwitch language={language} onChange={setLanguage} variant="corner" />
-      </div>
+      <Footer
+        text={strings.footer.credits}
+        pills={strings.contact.pills}
+        socials={strings.contact.socials}
+        language={language}
+        onLanguageChange={setLanguage}
+        showThemeSwitch={!isDesktop}
+      />
       <WorkModal
         project={activeProject}
         eyebrow={strings.work.eyebrow}
