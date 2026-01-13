@@ -387,6 +387,8 @@ section {
   width: var(--theme-switch-width);
   height: var(--theme-switch-height);
   background: transparent;
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   border-radius: 999px;
   border: 1px solid var(--border);
   transition: background-color 0.3s var(--ease-in-out-apple),
@@ -399,6 +401,32 @@ section {
   --thumb-x: 0px;
   opacity: 0;
   pointer-events: none;
+}
+
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(
+      100px 70px at 20% 0%,
+      rgba(90, 200, 255, 0.3),
+      transparent 70%
+    ),
+    radial-gradient(
+      120px 90px at 80% 120%,
+      rgba(120, 100, 255, 0.2),
+      transparent 70%
+    );
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out-apple);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.theme-switch:hover::after,
+.theme-switch:focus-visible::after {
+  opacity: 1;
 }
 
 .theme-switch.is-visible {
@@ -415,6 +443,7 @@ section {
   position: absolute;
   top: 50%;
   left: var(--theme-switch-pad);
+  z-index: 1;
   width: var(--theme-switch-thumb);
   height: var(--theme-switch-thumb);
   background: var(--switch-thumb);
@@ -450,6 +479,7 @@ section {
   padding: 0;
   pointer-events: none;
   color: var(--text);
+  z-index: 1;
 }
 
 .theme-switch-icons svg {
