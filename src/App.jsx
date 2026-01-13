@@ -18,6 +18,10 @@ function App() {
   const [showCredits, setShowCredits] = useState(false)
   const [language, setLanguage] = useState('en')
   const [headerVisible, setHeaderVisible] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return true
+    return window.matchMedia('(min-width: 769px)').matches
+  })
   const strings = COPY[language] || COPY.en
   const segments = useMemo(
     () => [
@@ -76,6 +80,29 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-contact-visible', showCredits ? 'true' : 'false')
   }, [showCredits])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia ? window.matchMedia('(min-width: 769px)') : null
+    if (!mediaQuery) return undefined
+
+    function handleChange(event) {
+      setIsDesktop(event.matches)
+    }
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange)
+      return () => {
+        mediaQuery.removeEventListener('change', handleChange)
+      }
+    }
+
+    mediaQuery.addListener(handleChange)
+    return () => {
+      mediaQuery.removeListener(handleChange)
+    }
+  }, [])
+
+  const themeSwitchVisible = isDesktop ? headerVisible : showCredits
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
@@ -163,7 +190,7 @@ function App() {
         onSelect={handleSelectSection}
         isVisible={headerVisible}
       />
-      <ThemeSwitch isVisible={showCredits} />
+      <ThemeSwitch isVisible={themeSwitchVisible} />
       <main>
         <HeroSection
           greeting={strings.hero.greeting}

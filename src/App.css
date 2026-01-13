@@ -45,6 +45,7 @@
   --card-glow-b: rgba(150, 110, 255, 0.22);
 
   --header-offset: 2rem;
+  --header-gutter: max(24px, calc((100vw - 1200px) / 2));
   --nav-pill-height: 40px;
   --theme-switch-height: var(--nav-pill-height);
   --theme-switch-width: 72px;
@@ -383,7 +384,7 @@ section {
 .theme-switch {
   position: fixed;
   top: calc(var(--header-offset) + (var(--nav-pill-height) - var(--theme-switch-height)) / 2);
-  right: 3rem;
+  right: var(--header-gutter);
   width: var(--theme-switch-width);
   height: var(--theme-switch-height);
   background: transparent;
