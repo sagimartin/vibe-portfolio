@@ -94,7 +94,6 @@ body {
 html {
   background: var(--bg);
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   overscroll-behavior-y: none;
 }
 
@@ -202,8 +201,6 @@ button,
    FULLPAGE SECTIONS (APPLE STYLE)
 ========================= */
 section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   min-height: calc(100vh - var(--header-h));
   padding: 0;
   scroll-margin-top: var(--header-h);
