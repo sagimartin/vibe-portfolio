@@ -62,6 +62,23 @@
       "badge": "Shopify",
       "imageKey": "pemdelian",
       "url": "https://pemdelian.com"
+    },
+    {
+      "id": "taati-pastry-studio",
+      "title": "taatipastry.hu",
+      "summary": "ARTISAN PASTRY STUDIO",
+      "description": "TAÁTI Pastry Studio is a Budapest-based boutique pastry brand where desserts are presented as shared rituals.\n\nAlongside the D2C storefront, a separate B2B site was built with custom B2B ordering logic for wholesale and partner ordering workflows.\n\nCustomers can place orders with pre-selectable date and time slots in the cart for pickup or delivery.\n\nVisit taatipastry.hu and try the experience.",
+      "tags": [
+        "Shopify",
+        "Custom CSS",
+        "Custom Scripts",
+        "Shopify Payments",
+        "Apple Pay",
+        "Google Pay"
+      ],
+      "badge": "Shopify",
+      "imageKey": "taati",
+      "url": "https://taatipastry.hu"
     }
   ]
 }

@@ -823,6 +823,10 @@ section {
   transform: scale(1.2);
 }
 
+.card-taati-pastry-studio .card-media-image {
+  transform: scale(1.5);
+}
+
 .card-media-image-light,
 .card-media-image-dark {
   display: none;
@@ -1013,6 +1017,16 @@ section {
 
 .work-modal-viverte-com .work-modal-brand {
   margin: 1.5rem 0;
+}
+
+.work-modal-taati-pastry-studio .work-modal-brand {
+  width: 220px;
+  height: 96px;
+}
+
+.work-modal-taati-pastry-studio .work-modal-image {
+  transform: scale(1.5);
+  transform-origin: center;
 }
 
 .work-modal-image {

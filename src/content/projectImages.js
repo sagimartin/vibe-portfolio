@@ -4,9 +4,12 @@ import viverteBlack from '../assets/viverte_black.webp'
 import viverteWhite from '../assets/viverte_white.png'
 import pemdelianBlack from '../assets/pemdelian_black.svg'
 import pemdelianWhite from '../assets/pemdelian_white.svg'
+import taatiBlack from '../assets/taati_black.svg'
+import taatiWhite from '../assets/taati_white.svg'
 
 export const PROJECT_IMAGES = {
   smellgo: { light: smellgoBlack, dark: smellgoWhite },
   viverte: { light: viverteBlack, dark: viverteWhite },
-  pemdelian: { light: pemdelianBlack, dark: pemdelianWhite }
+  pemdelian: { light: pemdelianBlack, dark: pemdelianWhite },
+  taati: { light: taatiBlack, dark: taatiWhite }
 }
