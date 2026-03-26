@@ -14,6 +14,20 @@ export const COPY = {
       cta: 'View case',
       linkLabel: 'Visit site'
     },
+    metrics: {
+      eyebrow: 'Commerce Snapshot',
+      title: 'Results, quantified.',
+      text: 'A live-looking estimate block for order volume and commercial value, driven by your latest Shopify snapshot.',
+      ordersLabel: 'Orders fulfilled',
+      amountLabel: 'Estimated gross value',
+      growthLabel: 'Auto-growth',
+      aovLabel: 'Average order value',
+      ordersMeta: '+{daily}/day rolling growth',
+      amountMeta: 'Current estimate: {compact}',
+      updateNote: 'Starts from 13 748 on March 26, 2026 and adds +{daily}/day automatically.',
+      basisNote:
+        'Derived from HUF 106.09M total sales and HUF {aov} average order value between Dec 26, 2025 and Mar 26, 2026.'
+    },
     contact: {
       eyebrow: 'Contact',
       title: "Let's build something nice.",
@@ -48,6 +62,21 @@ export const COPY = {
       eyebrow: 'Portfólió',
       cta: 'Részletek',
       linkLabel: 'Weboldal megnyitása'
+    },
+    metrics: {
+      eyebrow: 'Kereskedelmi Mutatók',
+      title: 'Eredmények, számokban.',
+      text: 'Egy animált becslő blokk, ami a legutóbbi Shopify snapshot alapján mutatja a rendelésszámot és a becsült kereskedelmi értéket.',
+      ordersLabel: 'Teljesített rendelések',
+      amountLabel: 'Becsült összérték',
+      growthLabel: 'Automatikus növekmény',
+      aovLabel: 'Átlagos kosárérték',
+      ordersMeta: 'Napi +{daily} darab automatikus növekedés',
+      amountMeta: 'Jelenlegi becslés: {compact}',
+      updateNote:
+        '2026. március 26-án 13 748 rendelésről indul, és automatikusan napi +{daily} darabbal nő.',
+      basisNote:
+        'A 2025. december 26. és 2026. március 26. közötti 106.09M HUF összforgalom és {aov} HUF átlagos kosárérték alapján.'
     },
     contact: {
       eyebrow: 'Kapcsolat',

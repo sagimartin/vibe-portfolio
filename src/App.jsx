@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header.jsx'
 import HeroSection from './components/HeroSection.jsx'
 import WorkSection from './components/WorkSection.jsx'
+import StatsSection from './components/StatsSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
 import ThemeSwitch from './components/ThemeSwitch.jsx'
@@ -206,6 +207,7 @@ function App() {
           onOpenProject={handleOpenProject}
           ariaLabel={strings.nav.work}
         />
+        <StatsSection strings={strings.metrics} language={language} />
         <ContactSection
           eyebrow={strings.contact.eyebrow}
           title={strings.contact.title}

@@ -8,7 +8,7 @@ function WorkSection(props) {
   const ariaLabel = props.ariaLabel || 'Work'
 
   return (
-    <section id="work" aria-label={ariaLabel}>
+    <section id="work" aria-label={ariaLabel} className="work-section">
       <div className="container section-inner work-section-inner">
         <h2 className="section-title reveal delay-1">{title}</h2>
         <div className="grid">
