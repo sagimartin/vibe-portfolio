@@ -23,6 +23,7 @@ export const TAG_LABELS = {
     'Custom CSS': 'Egyedi CSS',
     'Custom Scripts': 'Egyedi szkriptek',
     'Digiloop Pickup & Delivery': 'Digiloop Pickup & Delivery',
+    PeakShip: 'PeakShip',
     UploadKit: 'UploadKit',
     'Impulse theme': 'Impulse téma',
     'Szamlazz.hu': 'Számlázz.hu',
