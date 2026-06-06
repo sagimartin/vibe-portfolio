@@ -6,7 +6,10 @@ export const TAG_LABELS = {
     Jewelry: 'Jewelry',
     'Design UI': 'Design UI',
     Markets: 'Markets',
-    Upsell: 'Upsell'
+    Upsell: 'Upsell',
+    Beauty: 'Beauty',
+    Fragrance: 'Fragrance',
+    'Brand storytelling': 'Brand storytelling'
   },
   hu: {
     Shopify: 'Shopify',
@@ -17,6 +20,7 @@ export const TAG_LABELS = {
     Markets: 'Piacok',
     Upsell: 'Upsell',
     'Debutify theme': 'Debutify téma',
+    'Prestige theme': 'Prestige téma',
     Stripe: 'Stripe',
     ApplePay: 'Apple Pay',
     GooglePay: 'Google Pay',
@@ -38,6 +42,9 @@ export const TAG_LABELS = {
     'Shopify Payments': 'Shopify Payments',
     'Apple Pay': 'Apple Pay',
     'Google Pay': 'Google Pay',
-    'Shop Pay': 'Shop Pay'
+    'Shop Pay': 'Shop Pay',
+    Beauty: 'Beauty',
+    Fragrance: 'Illat',
+    'Brand storytelling': 'Brand storytelling'
   }
 }

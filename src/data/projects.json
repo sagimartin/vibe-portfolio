@@ -41,7 +41,7 @@
       "id": "pemdelian-com",
       "title": "PemDelian.com",
       "summary": "Premium skincare brand",
-      "description": "Pem Delian is a premium skincare and cosmetics brand built for multi-market EU sales.\n\nThe webshop supports multiple languages and currencies, and features extensive custom development — from tailored frontend components and a product quiz (Routine Finder) to dynamic upsell and gift logic.\n\nExternal fulfillment providers are seamlessly integrated, enabling scalable international logistics while preserving a high-end, conversion-driven customer experience.",
+      "description": "Pem Delian is a premium skincare and cosmetics brand built for multi-market EU sales.\n\nThe webshop supports multiple languages and currencies, and features extensive custom development — from tailored frontend components and a product quiz (Routine Finder) to dynamic upsell and gift logic.\n\nExternal fulfillment providers are seamlessly integrated, enabling scalable international logistics while preserving a high-end, conversion-driven customer experience.\n\nYou may also recognize the products from dm stores in Hungary and Germany.",
       "tags": [
         "Shopify",
         "Cosmo theme",
@@ -62,6 +62,31 @@
       "badge": "Shopify",
       "imageKey": "pemdelian",
       "url": "https://pemdelian.com"
+    },
+    {
+      "id": "misty-monday",
+      "title": "Misty Monday",
+      "summary": "Modern niche fragrance brand",
+      "description": "Misty Monday was created to make everyday scent rituals feel more distinctive.\n\nThe webshop supports multiple languages, currencies, and Shopify Markets, with custom frontend components, dynamic upsell logic, gift flows, and external fulfillment integrations.\n\nThe project focuses on clear brand storytelling, polished product presentation, and a minimal shopping flow that keeps the fragrance world easy to understand and easy to explore.\n\nThe products may also feel familiar from dm stores in Hungary.",
+      "tags": [
+        "Shopify",
+        "Prestige theme",
+        "Markets",
+        "Multi-language",
+        "Gift Selector",
+        "Upsell",
+        "Custom Code",
+        "Billingo",
+        "PeakShip",
+        "iLogistic",
+        "Shopify Payments",
+        "Apple Pay",
+        "Google Pay",
+        "Shop Pay"
+      ],
+      "badge": "Shopify",
+      "imageKey": "mistyMonday",
+      "url": "https://misty-monday.com"
     },
     {
       "id": "taati-pastry-studio",
