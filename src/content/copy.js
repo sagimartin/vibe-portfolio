@@ -34,7 +34,7 @@ export const COPY = {
       text: "Available for Shopify builds and UX polish. Have a project in mind? Let's talk.",
       ctaMessage: 'Send message',
       ctaCall: 'Book a call',
-      replies: 'Usually replies in ~2-3h',
+      replies: 'Usually replies in ~1h',
       pills: ['Budapest · Remote EU'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },
@@ -84,7 +84,7 @@ export const COPY = {
       text: 'Shopify projektek és UX finomhangolás. Van egy ötleted? Beszéljünk.',
       ctaMessage: 'Írj üzenetet',
       ctaCall: 'Foglalj időpontot',
-      replies: 'Általában 2-3 órán belül válaszolok',
+      replies: 'Általában 1 órán belül válaszolok',
       pills: ['Budapest · EU remote'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },

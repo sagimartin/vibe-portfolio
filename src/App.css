@@ -1664,8 +1664,17 @@ footer .footer-toggles .theme-switch {
   }
 
   .work-section-inner {
+    padding-top: 14px;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .work-section .section-title {
+    display: none;
+  }
+
+  .work-section .card.reveal {
+    transform: translateY(0);
   }
 
   .hero-title {

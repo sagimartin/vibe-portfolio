@@ -4,7 +4,7 @@ function ContactSection(props) {
   var text = props.text || "Have a project in mind? Let's talk."
   var ctaMessage = props.ctaMessage || 'Send message'
   var ctaCall = props.ctaCall || 'Book a call'
-  var replies = props.replies || 'Usually replies in ~2-3h'
+  var replies = props.replies || 'Usually replies in ~1h'
   var messageSubject = props.messageSubject || 'Hey Martin 👋'
   var callLink = props.callLink || 'https://meet.google.com/new'
   const handleMouseMove = (event) => {
