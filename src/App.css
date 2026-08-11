@@ -1880,6 +1880,10 @@ footer .footer-toggles .theme-switch {
     );
   }
 
+  .grid .card {
+    width: clamp(260px, 78vw, 340px);
+  }
+
   .work-section .section-title {
     display: none;
   }
