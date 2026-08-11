@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import WorkCard from './WorkCard.jsx'
 
 const TARGET_SPEED = 60
-const MOBILE_TARGET_SPEED = 22
+const MOBILE_TARGET_SPEED = 11
 const MOBILE_BREAKPOINT = 768
 const RESUME_DELAY = 2000
 const DRAG_THRESHOLD = 6
