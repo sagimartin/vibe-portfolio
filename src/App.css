@@ -866,7 +866,7 @@ section {
 
 .grid .card {
   flex: 0 0 auto;
-  width: clamp(260px, 32vw, 340px);
+  width: clamp(260px, 85vw, 340px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1857,6 +1857,7 @@ footer .footer-toggles .theme-switch {
   }
 
   .work-section-inner {
+    max-width: 100%;
     padding-top: 14px;
     padding-left: 0;
     padding-right: 0;
