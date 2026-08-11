@@ -107,6 +107,31 @@
       "badge": "Shopify",
       "imageKey": "taati",
       "url": "https://taatipastry.hu"
+    },
+    {
+      "id": "celeni-hu",
+      "title": "Celeni.hu",
+      "summary": "Fashion house, interior design & wellness retreats",
+      "description": "Celeni is a Budapest-born fashion line built around precise tailoring and timeless, effortlessly sophisticated silhouettes.\n\nThe storefront has grown beyond clothing and accessories into a full lifestyle brand: Celeni Design offers interior styling, brand, and social content services, while Camp Anima is a seasonal wellness retreat woven into the site — pilates, restorative yoga, and shared meals in nature.\n\nFashion, interior projects, editorial-style lifestyle content, and the Camp Anima retreat all live together in one place.",
+      "tags": [
+        "Shopify",
+        "Atelier theme",
+        "Multi-language",
+        "Custom Code",
+        "Billingo",
+        "Shopify Payments",
+        "Pre-order",
+        "Apple Pay",
+        "Google Pay",
+        "Shop Pay"
+      ],
+      "badge": "Shopify",
+      "imageKey": "celeni",
+      "url": "https://celeni.hu",
+      "relatedLink": {
+        "label": "Camp Anima",
+        "url": "https://celeni.hu/pages/campanima"
+      }
     }
   ]
 }

@@ -9,7 +9,14 @@ export const TAG_LABELS = {
     Upsell: 'Upsell',
     Beauty: 'Beauty',
     Fragrance: 'Fragrance',
-    'Brand storytelling': 'Brand storytelling'
+    'Brand storytelling': 'Brand storytelling',
+    'Atelier theme': 'Atelier theme',
+    Billingo: 'Billingo',
+    'Shopify Payments': 'Shopify Payments',
+    'Pre-order': 'Pre-order',
+    'Apple Pay': 'Apple Pay',
+    'Google Pay': 'Google Pay',
+    'Shop Pay': 'Shop Pay'
   },
   hu: {
     Shopify: 'Shopify',
@@ -45,6 +52,8 @@ export const TAG_LABELS = {
     'Shop Pay': 'Shop Pay',
     Beauty: 'Beauty',
     Fragrance: 'Illat',
-    'Brand storytelling': 'Brand storytelling'
+    'Brand storytelling': 'Brand storytelling',
+    'Atelier theme': 'Atelier téma',
+    'Pre-order': 'Előrendelés'
   }
 }

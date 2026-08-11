@@ -1,5 +1,31 @@
 import { useEffect } from 'react'
 
+function renderParagraph(text, relatedLink) {
+  if (!relatedLink || !relatedLink.label || !text.includes(relatedLink.label)) return text
+
+  const parts = text.split(relatedLink.label)
+  const nodes = []
+
+  parts.forEach(function (part, index) {
+    if (index > 0) {
+      nodes.push(
+        <a
+          key={'related-' + index}
+          className="work-modal-inline-link"
+          href={relatedLink.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {relatedLink.label}
+        </a>
+      )
+    }
+    nodes.push(part)
+  })
+
+  return nodes
+}
+
 function WorkModal(props) {
   const project = props.project
   const onClose = props.onClose
@@ -95,7 +121,7 @@ function WorkModal(props) {
         <div className="work-modal-body">
           {project.summary && <p className="work-modal-lead">{project.summary}</p>}
           {paragraphs.map(function (paragraph, index) {
-            return <p key={project.id + '-p-' + index}>{paragraph}</p>
+            return <p key={project.id + '-p-' + index}>{renderParagraph(paragraph, project.relatedLink)}</p>
           })}
           {project.url ? (
             <a className="work-modal-link" href={project.url} target="_blank" rel="noreferrer">

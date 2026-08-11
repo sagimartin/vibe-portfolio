@@ -10,6 +10,7 @@ function WorkCard(props) {
   const imageLight = card.imageLight || card.image
   const imageDark = card.imageDark
   const displayTitle = card.title
+  const isHidden = Boolean(props.hidden)
 
   function handleOpen() {
     if (typeof onOpen === 'function') onOpen(card.id)
@@ -24,9 +25,10 @@ function WorkCard(props) {
 
   return (
     <div
-      className={'card reveal card-' + card.id + ' ' + card.delayClass}
+      className={'card card-' + card.id}
       role="button"
-      tabIndex={0}
+      tabIndex={isHidden ? -1 : 0}
+      aria-hidden={isHidden ? 'true' : undefined}
       aria-haspopup="dialog"
       aria-label={'Open ' + card.title}
       onClick={handleOpen}
@@ -99,6 +101,7 @@ function WorkCard(props) {
         <button
           className="card-link"
           type="button"
+          tabIndex={isHidden ? -1 : 0}
           onClick={function (event) {
             event.stopPropagation()
             handleOpen()

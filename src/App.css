@@ -689,11 +689,190 @@ section {
   transition-delay: 0.36s;
 }
 
-.grid {
+.work-view-stage {
+  transition: opacity 0.28s var(--ease-in-out-apple),
+    transform 0.28s var(--ease-in-out-apple),
+    filter 0.28s var(--ease-in-out-apple);
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.work-view-stage.is-transitioning {
+  opacity: 0;
+  transform: scale(0.98);
+  filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-view-stage {
+    transition: opacity 0.15s linear;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+.work-view-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+}
+
+.work-view-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--nav-pill-bg);
+  color: var(--text);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s var(--ease-out-apple),
+    box-shadow 0.2s var(--ease-out-apple);
+}
+
+.work-view-btn:hover {
+  transform: scale(1.06);
+}
+
+.work-view-btn:active {
+  transform: scale(0.94);
+}
+
+.work-view-btn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--text) 30%, transparent);
+}
+
+.work-view-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.4) rotate(-40deg);
+  transition: opacity 0.3s var(--ease-out-apple),
+    transform 0.3s var(--ease-out-apple);
+}
+
+.work-view-icon.is-active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.work-view-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-view-icon {
+    transition: opacity 0.15s linear;
+    transform: none !important;
+  }
+}
+
+.work-bento {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .work-bento {
+    grid-template-columns: repeat(6, 1fr);
+    align-items: stretch;
+  }
+
+  .work-bento .card {
+    height: 100%;
+  }
+
+  .work-bento .card:nth-child(1) {
+    grid-column: span 4;
+  }
+
+  .work-bento .card:nth-child(1) .card-media {
+    height: clamp(180px, 22vw, 260px);
+  }
+
+  .work-bento .card:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .work-bento .card:nth-child(3),
+  .work-bento .card:nth-child(4),
+  .work-bento .card:nth-child(5),
+  .work-bento .card:nth-child(6) {
+    grid-column: span 3;
+  }
+}
+
+.work-track-viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 32px;
+  width: max-content;
+  padding: 4px 2px 28px;
   perspective: 1200px;
+  cursor: grab;
+  will-change: transform;
+  animation: workTrackAutoplay var(--work-track-duration, 30s) linear infinite;
+}
+
+@keyframes workTrackAutoplay {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+.grid.is-dragging {
+  cursor: grabbing;
+}
+
+.grid.is-dragging .card {
+  cursor: grabbing;
+}
+
+.grid .card {
+  flex: 0 0 auto;
+  width: clamp(260px, 32vw, 340px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid {
+    animation: none;
+  }
 }
 
 .card {
@@ -1302,6 +1481,20 @@ section {
 .work-modal-link:hover {
   color: var(--text);
   border-bottom-color: var(--text);
+}
+
+.work-modal-inline-link {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--muted) 70%, transparent);
+  transition: color 0.2s var(--ease-out-apple),
+    text-decoration-color 0.2s var(--ease-out-apple);
+}
+
+.work-modal-inline-link:hover {
+  color: var(--text);
+  text-decoration-color: var(--text);
 }
 
 .work-modal-lead {
