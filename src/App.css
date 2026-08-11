@@ -1857,9 +1857,27 @@ footer .footer-toggles .theme-switch {
   }
 
   .work-section-inner {
+    max-width: 100%;
     padding-top: 14px;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .work-track-viewport {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
   }
 
   .work-section .section-title {
