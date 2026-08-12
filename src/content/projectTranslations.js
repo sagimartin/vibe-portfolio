@@ -28,7 +28,7 @@ export const PROJECT_TRANSLATIONS = {
     'celeni-hu': {
       summary: 'Divatház, belsőépítészet & wellness retreatek',
       description:
-        "A Celeni egy budapesti divatmárka, amely a precíz szabászatra és az időtlen, könnyed eleganciájú sziluettekre épül.\n\nA Celeni a ruházaton és kiegészítőkön túl teljes életmód-márkává nőtte ki magát: a Celeni Design belsőépítészeti stílustervezést, brand- és social media szolgáltatásokat kínál, a Camp Anima pedig egy szezonális wellness retreat, amit a site-ba szőttek — pilates, regeneráló jóga és közös étkezések a természetben.\n\nDivat, belsőépítészeti projektek, magazin-stílusú lifestyle tartalom és a Camp Anima retreat mind egy helyen."
+        "A Celeni egy budapesti divatmárka, amely a precíz szabászatra és az időtlen, könnyed eleganciájú sziluettekre épül.\n\nMára a ruházaton és kiegészítőkön túl teljes életmód-márkává nőtte ki magát: a Celeni Design belsőépítészeti stílustervezést, brand- és social media szolgáltatásokat kínál, a Camp Anima pedig egy szezonális wellness retreat — pilates, regeneráló jóga és közös étkezések a természetben."
     }
   }
 }
