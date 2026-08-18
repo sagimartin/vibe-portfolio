@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import WorkCard from './WorkCard.jsx'
 
-const TARGET_SPEED = 60
+const SECONDS_PER_VIEWPORT = 24
 const RESUME_DELAY = 2000
 const DRAG_THRESHOLD = 6
 const SET_COUNT = 3
@@ -77,7 +77,8 @@ function WorkSection(props) {
     function measure() {
       const fullWidth = node.getBoundingClientRect().width
       state.setWidth = fullWidth / SET_COUNT
-      state.duration = state.setWidth > 0 ? state.setWidth / TARGET_SPEED : DEFAULT_DURATION
+      const targetSpeed = window.innerWidth / SECONDS_PER_VIEWPORT
+      state.duration = state.setWidth > 0 && targetSpeed > 0 ? state.setWidth / targetSpeed : DEFAULT_DURATION
       node.style.setProperty('--work-track-duration', state.duration + 's')
     }
 
