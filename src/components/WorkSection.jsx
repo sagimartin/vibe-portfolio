@@ -71,7 +71,8 @@ function WorkSection(props) {
       dragStartTranslateX: 0,
       resumeTimeoutId: null,
       setWidth: 0,
-      duration: DEFAULT_DURATION
+      duration: DEFAULT_DURATION,
+      isVisible: false
     }
 
     function measure() {
@@ -79,6 +80,10 @@ function WorkSection(props) {
       state.setWidth = fullWidth / SET_COUNT
       state.duration = state.setWidth > 0 ? state.setWidth / TARGET_SPEED : DEFAULT_DURATION
       node.style.setProperty('--work-track-duration', state.duration + 's')
+    }
+
+    function applyPlayState() {
+      node.style.animationPlayState = state.isVisible ? 'running' : 'paused'
     }
 
     function getCurrentTranslateX() {
@@ -121,9 +126,17 @@ function WorkSection(props) {
       node.style.animation = ''
       node.style.animationDuration = state.duration + 's'
       node.style.animationDelay = -progress * state.duration + 's'
+      applyPlayState()
     }
 
     measure()
+    applyPlayState()
+
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      state.isVisible = entries[entries.length - 1].isIntersecting
+      if (!state.isManual) applyPlayState()
+    }, { threshold: 0.05 })
+    visibilityObserver.observe(node.parentElement || node)
 
     function clearResumeTimer() {
       if (state.resumeTimeoutId) {
@@ -233,6 +246,7 @@ function WorkSection(props) {
       window.removeEventListener('mouseup', endDrag)
       window.removeEventListener('touchend', endDrag)
       window.removeEventListener('resize', handleResize)
+      visibilityObserver.disconnect()
       clearResumeTimer()
     }
   }, [cards, viewMode])
