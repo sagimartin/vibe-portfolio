@@ -1744,11 +1744,13 @@ section {
 }
 
 .contact-meta-entry:not(:first-child)::before {
-  content: '•';
+  content: '';
+  width: 3px;
+  height: 3px;
   margin: 0 12px;
-  color: color-mix(in srgb, var(--muted) 70%, transparent);
-  display: inline-flex;
-  align-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--muted) 70%, transparent);
+  flex-shrink: 0;
 }
 
 .contact-meta-item {
