@@ -1756,12 +1756,12 @@ section {
   align-items: center;
   gap: 6px;
   color: inherit;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
 
 .contact-meta-link {
   text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
   transition: color 0.2s var(--ease-out-apple),
     border-color 0.2s var(--ease-out-apple);
 }
