@@ -1863,6 +1863,12 @@ footer .footer-toggles .theme-switch {
     padding-right: 0;
   }
 
+  .work-section-inner.is-grid {
+    max-width: min(var(--content-max), 85vw);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .work-section .section-title {
     display: none;
   }

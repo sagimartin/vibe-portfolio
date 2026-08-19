@@ -253,7 +253,7 @@ function WorkSection(props) {
 
   return (
     <section id="work" aria-label={ariaLabel} className="work-section">
-      <div className="container section-inner work-section-inner">
+      <div className={'container section-inner work-section-inner' + (viewMode === 'grid' ? ' is-grid' : '')}>
         <h2 className="section-title reveal delay-1">{title}</h2>
         <div className={isTransitioning ? 'work-view-stage is-transitioning' : 'work-view-stage'}>
           {viewMode === 'carousel' ? (
