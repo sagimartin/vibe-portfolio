@@ -27,6 +27,20 @@ function Footer(props) {
         </svg>
       )
     }
+    if (label === 'Shopify Partners') {
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6 8h12l1 12.5a1 1 0 0 1-1 1.5H6a1 1 0 0 1-1-1.5L6 8Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      )
+    }
     return null
   }
 

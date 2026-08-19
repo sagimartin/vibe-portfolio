@@ -38,7 +38,8 @@ export const COPY = {
       pills: ['Budapest · Remote EU'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' }
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' },
+        { label: 'Shopify Partners', href: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v' }
       ],
       messageSubject: 'Hey Martin 👋',
       callLink:
@@ -88,7 +89,8 @@ export const COPY = {
       pills: ['Budapest · EU remote'],
       socials: [
         { label: 'GitHub', href: 'https://github.com/sagimartin' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' }
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' },
+        { label: 'Shopify Partners', href: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v' }
       ],
       messageSubject: 'Szia Martin 👋',
       callLink:
