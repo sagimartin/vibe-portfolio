@@ -36,6 +36,7 @@ function WorkSection(props) {
   const ariaLabel = props.ariaLabel || 'Work'
   const trackRef = useRef(null)
   const sectionRef = useRef(null)
+  const viewportRef = useRef(null)
   const [viewMode, setViewMode] = useState('carousel')
   const [isTransitioning, setIsTransitioning] = useState(false)
   const pendingModeRef = useRef(null)
@@ -43,14 +44,15 @@ function WorkSection(props) {
 
   function switchView(mode) {
     if (mode === viewMode || isTransitioning) return
-    if (mode === 'carousel' && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
     pendingModeRef.current = mode
     setIsTransitioning(true)
     transitionTimeoutRef.current = window.setTimeout(() => {
-      setViewMode(pendingModeRef.current)
+      const nextMode = pendingModeRef.current
+      setViewMode(nextMode)
       requestAnimationFrame(() => {
+        if (nextMode === 'carousel' && viewportRef.current) {
+          viewportRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
         requestAnimationFrame(() => setIsTransitioning(false))
       })
     }, TRANSITION_DURATION)
@@ -261,7 +263,7 @@ function WorkSection(props) {
         <h2 className="section-title reveal delay-1">{title}</h2>
         <div className={isTransitioning ? 'work-view-stage is-transitioning' : 'work-view-stage'}>
           {viewMode === 'carousel' ? (
-            <div className="work-track-viewport">
+            <div className="work-track-viewport" ref={viewportRef}>
               <div className="grid" ref={trackRef}>
                 {[0, 1, 2].map(function (setIndex) {
                   return cards.map(function (card) {
