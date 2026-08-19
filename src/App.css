@@ -1751,6 +1751,7 @@ section {
   border-radius: 50%;
   background: color-mix(in srgb, var(--muted) 70%, transparent);
   flex-shrink: 0;
+  transform: translateY(-1.5px);
 }
 
 .contact-meta-item {
