@@ -844,16 +844,6 @@ section {
   perspective: 1200px;
   cursor: grab;
   will-change: transform;
-  animation: workTrackAutoplay var(--work-track-duration, 30s) linear infinite;
-}
-
-@keyframes workTrackAutoplay {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% / 3));
-  }
 }
 
 .grid.is-dragging {
@@ -867,12 +857,6 @@ section {
 .grid .card {
   flex: 0 0 auto;
   width: clamp(260px, 85vw, 340px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .grid {
-    animation: none;
-  }
 }
 
 .card {

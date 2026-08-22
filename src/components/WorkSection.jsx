@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import WorkCard from './WorkCard.jsx'
 
 const TARGET_SPEED = 35
+const MAX_FRAME_SECONDS = 0.05
 const RESUME_DELAY = 2000
 const DRAG_THRESHOLD = 6
 const SET_COUNT = 3
 const MIDDLE_SET_INDEX = 1
-const DEFAULT_DURATION = 30
 const TRANSITION_DURATION = 280
 
 function GridIcon() {
@@ -77,33 +77,20 @@ function WorkSection(props) {
       dragStartTranslateX: 0,
       resumeTimeoutId: null,
       setWidth: 0,
-      duration: DEFAULT_DURATION,
-      isVisible: false
+      isVisible: false,
+      reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      x: 0,
+      lastTimestamp: null,
+      rafId: null
     }
 
     function measure() {
       const fullWidth = node.getBoundingClientRect().width
       state.setWidth = fullWidth / SET_COUNT
-      state.duration = state.setWidth > 0 ? state.setWidth / TARGET_SPEED : DEFAULT_DURATION
-      node.style.setProperty('--work-track-duration', state.duration + 's')
     }
 
-    function applyPlayState() {
-      node.style.animationPlayState = state.isVisible ? 'running' : 'paused'
-    }
-
-    function getCurrentTranslateX() {
-      const transform = window.getComputedStyle(node).transform
-      if (!transform || transform === 'none') return 0
-      const match = transform.match(/matrix\(([^)]+)\)/)
-      if (!match) return 0
-      const parts = match[1].split(',').map(Number)
-      return parts.length >= 6 ? parts[4] : 0
-    }
-
-    function getManualX() {
-      const match = node.style.transform.match(/translateX\(([-\d.]+)px\)/)
-      return match ? parseFloat(match[1]) : 0
+    function applyTransform() {
+      node.style.transform = 'translateX(' + state.x + 'px)'
     }
 
     function wrapX(x) {
@@ -115,32 +102,30 @@ function WorkSection(props) {
     }
 
     function enterManual() {
-      if (state.isManual) return
-      const currentX = getCurrentTranslateX()
       state.isManual = true
-      node.style.animation = 'none'
-      node.style.transform = 'translateX(' + currentX + 'px)'
     }
 
     function exitManual() {
-      if (!state.isManual) return
       state.isManual = false
-      const currentX = getManualX()
-      const setWidth = state.setWidth
-      const progress = setWidth > 0 ? Math.min(Math.max(-currentX / setWidth, 0), 1) : 0
-      node.style.transform = ''
-      node.style.animation = ''
-      node.style.animationDuration = state.duration + 's'
-      node.style.animationDelay = -progress * state.duration + 's'
-      applyPlayState()
     }
 
     measure()
-    applyPlayState()
+    applyTransform()
+
+    function tick(timestamp) {
+      if (state.lastTimestamp === null) state.lastTimestamp = timestamp
+      const dt = Math.min((timestamp - state.lastTimestamp) / 1000, MAX_FRAME_SECONDS)
+      state.lastTimestamp = timestamp
+      if (!state.isManual && state.isVisible && !state.reducedMotion) {
+        state.x = wrapX(state.x - TARGET_SPEED * dt)
+        applyTransform()
+      }
+      state.rafId = requestAnimationFrame(tick)
+    }
+    state.rafId = requestAnimationFrame(tick)
 
     const visibilityObserver = new IntersectionObserver((entries) => {
       state.isVisible = entries[entries.length - 1].isIntersecting
-      if (!state.isManual) applyPlayState()
     }, { threshold: 0.05 })
     visibilityObserver.observe(node.parentElement || node)
 
@@ -175,7 +160,8 @@ function WorkSection(props) {
       if (!isMostlyVertical) return
       event.preventDefault()
       clearResumeTimer()
-      node.style.transform = 'translateX(' + wrapX(getManualX() - event.deltaY) + 'px)'
+      state.x = wrapX(state.x - event.deltaY)
+      applyTransform()
     }
 
     function pointerX(event) {
@@ -187,7 +173,7 @@ function WorkSection(props) {
       state.isDragging = true
       state.hasDragged = false
       state.dragStartX = pointerX(event)
-      state.dragStartTranslateX = getManualX()
+      state.dragStartTranslateX = state.x
       node.classList.add('is-dragging')
     }
 
@@ -206,7 +192,8 @@ function WorkSection(props) {
       if (!state.hasDragged && Math.abs(deltaX) > DRAG_THRESHOLD) {
         state.hasDragged = true
       }
-      node.style.transform = 'translateX(' + wrapX(state.dragStartTranslateX + deltaX) + 'px)'
+      state.x = wrapX(state.dragStartTranslateX + deltaX)
+      applyTransform()
     }
 
     function endDrag() {
@@ -254,6 +241,7 @@ function WorkSection(props) {
       window.removeEventListener('resize', handleResize)
       visibilityObserver.disconnect()
       clearResumeTimer()
+      if (state.rafId) cancelAnimationFrame(state.rafId)
     }
   }, [cards, viewMode])
 
