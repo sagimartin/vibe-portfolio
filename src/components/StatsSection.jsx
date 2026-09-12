@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 
 const BUDAPEST_TIME_ZONE = 'Europe/Budapest'
 const BASE_DAY_NUMBER = Math.floor(Date.UTC(2026, 2, 26) / 86400000)
-const BASE_ORDERS = 13748
+const BASE_ORDERS = 15748
 const DAILY_ORDER_GROWTH = 129
-const AVERAGE_ORDER_VALUE = 10655.77
+const AVERAGE_ORDER_VALUE = 12255.77
 const ECB_HUF_PER_EUR = 387.83
 const DISTRIBUTION_START_MINUTES = 6 * 60 + 30
 const DISTRIBUTION_END_MINUTES = 23 * 60

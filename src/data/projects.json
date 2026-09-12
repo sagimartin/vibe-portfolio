@@ -132,6 +132,26 @@
         "label": "Camp Anima",
         "url": "https://celeni.hu/pages/campanima"
       }
+    },
+    {
+      "id": "vitezkurtos-hu",
+      "title": "VitézKürtős.hu",
+      "summary": "TRADITIONAL CHIMNEY CAKE BAKERY",
+      "description": "Vitéz Kürtős has been baking kürtőskalács — Hungary's traditional chimney cake — since 2000, rooted in a family recipe from Székelyudvarhely, Transylvania, and now carrying the product's official \"hungarikum\" heritage status.\n\nThe webshop brings together three physical locations: two inside Budapest Zoo — Édes Mackó, the country's first kürtőskalács patisserie, and the original Vitéz Kürtős Kuckó kiosk, a 16-year zoo partner — plus a lakeside shop on Lake Balaton in Tihany. The site also keeps visitors up to date with the latest news and the festivals the brand organizes.\n\nAlongside these sits the Vitéz Gastro product line: Hargita beechwood charcoal used by leading restaurants, and the brand's own Bake'n'Roll home grill, shipped nationwide and across the EU.\n\nCustom-built ordering logic handles location-aware delivery and pickup, seasonal flavors, gift vouchers, workshop bookings, and a loyalty program with thousands of members.",
+      "tags": [
+        "Shopify",
+        "Custom CSS",
+        "Custom Scripts",
+        "Shopify Payments",
+        "Apple Pay",
+        "Google Pay",
+        "Prestige theme",
+        "Szamlazz.hu",
+        "Pickeasy"
+      ],
+      "badge": "Shopify",
+      "imageKey": "vitezkurtos",
+      "url": "https://vitezkurtos.hu"
     }
   ]
 }

@@ -10,6 +10,8 @@ import mistyMondayBlack from '../assets/mistymonday_black.svg'
 import mistyMondayWhite from '../assets/mistymonday_white.svg'
 import celeniBlack from '../assets/celeni_black.png'
 import celeniWhite from '../assets/celeni_white.png'
+import vitezkurtosBlack from '../assets/vitezkurtos_black.svg'
+import vitezkurtosWhite from '../assets/vitezkurtos_white.svg'
 
 export const PROJECT_IMAGES = {
   smellgo: { light: smellgoBlack, dark: smellgoWhite },
@@ -17,5 +19,6 @@ export const PROJECT_IMAGES = {
   pemdelian: { light: pemdelianBlack, dark: pemdelianWhite },
   taati: { light: taatiBlack, dark: taatiWhite },
   mistyMonday: { light: mistyMondayBlack, dark: mistyMondayWhite },
-  celeni: { light: celeniBlack, dark: celeniWhite }
+  celeni: { light: celeniBlack, dark: celeniWhite },
+  vitezkurtos: { light: vitezkurtosBlack, dark: vitezkurtosWhite }
 }
