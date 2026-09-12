@@ -300,23 +300,25 @@ function WorkSection(props) {
             </div>
           )}
         </div>
-        <div className="work-view-toggle" hidden={isMobile}>
-          <button
-            type="button"
-            className="work-view-btn"
-            aria-label={viewMode === 'carousel' ? 'Switch to grid view' : 'Switch to autoplay view'}
-            onClick={function () {
-              switchView(viewMode === 'carousel' ? 'grid' : 'carousel')
-            }}
-          >
-            <span className={viewMode === 'carousel' ? 'work-view-icon is-active' : 'work-view-icon'}>
-              <GridIcon />
-            </span>
-            <span className={viewMode === 'grid' ? 'work-view-icon is-active' : 'work-view-icon'}>
-              <PlayIcon />
-            </span>
-          </button>
-        </div>
+        {isMobile ? null : (
+          <div className="work-view-toggle">
+            <button
+              type="button"
+              className="work-view-btn"
+              aria-label={viewMode === 'carousel' ? 'Switch to grid view' : 'Switch to autoplay view'}
+              onClick={function () {
+                switchView(viewMode === 'carousel' ? 'grid' : 'carousel')
+              }}
+            >
+              <span className={viewMode === 'carousel' ? 'work-view-icon is-active' : 'work-view-icon'}>
+                <GridIcon />
+              </span>
+              <span className={viewMode === 'grid' ? 'work-view-icon is-active' : 'work-view-icon'}>
+                <PlayIcon />
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
