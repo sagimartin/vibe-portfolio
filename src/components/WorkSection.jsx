@@ -79,6 +79,7 @@ function WorkSection(props) {
       setWidth: 0,
       isVisible: false,
       reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      isMobile: window.matchMedia('(max-width: 899px)').matches,
       x: 0,
       lastTimestamp: null,
       rafId: null
@@ -116,7 +117,7 @@ function WorkSection(props) {
       if (state.lastTimestamp === null) state.lastTimestamp = timestamp
       const dt = Math.min((timestamp - state.lastTimestamp) / 1000, MAX_FRAME_SECONDS)
       state.lastTimestamp = timestamp
-      if (!state.isManual && state.isVisible && !state.reducedMotion) {
+      if (!state.isManual && state.isVisible && !state.reducedMotion && !state.isMobile) {
         state.x = wrapX(state.x - TARGET_SPEED * dt)
         applyTransform()
       }
@@ -183,6 +184,7 @@ function WorkSection(props) {
     }
 
     function handleTouchStart(event) {
+      if (state.isMobile) return
       startDrag(event)
     }
 
@@ -213,6 +215,7 @@ function WorkSection(props) {
 
     function handleResize() {
       measure()
+      state.isMobile = window.matchMedia('(max-width: 899px)').matches
     }
 
     node.addEventListener('mousemove', handleHoverMove)
