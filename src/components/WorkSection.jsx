@@ -39,8 +39,22 @@ function WorkSection(props) {
   const viewportRef = useRef(null)
   const [viewMode, setViewMode] = useState('carousel')
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isMobile, setIsMobile] = useState(function () {
+    return typeof window !== 'undefined' && window.matchMedia('(max-width: 899px)').matches
+  })
   const pendingModeRef = useRef(null)
   const transitionTimeoutRef = useRef(null)
+
+  useEffect(function () {
+    const mediaQuery = window.matchMedia('(max-width: 899px)')
+    function handleChange(event) {
+      setIsMobile(event.matches)
+    }
+    mediaQuery.addEventListener('change', handleChange)
+    return function () {
+      mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
 
   function switchView(mode) {
     if (mode === viewMode || isTransitioning) return
@@ -250,10 +264,10 @@ function WorkSection(props) {
 
   return (
     <section id="work" aria-label={ariaLabel} className="work-section" ref={sectionRef}>
-      <div className={'container section-inner work-section-inner' + (viewMode === 'grid' ? ' is-grid' : '')}>
+      <div className={'container section-inner work-section-inner' + (viewMode === 'grid' || isMobile ? ' is-grid' : '')}>
         <h2 className="section-title reveal delay-1">{title}</h2>
         <div className={isTransitioning ? 'work-view-stage is-transitioning' : 'work-view-stage'}>
-          {viewMode === 'carousel' ? (
+          {viewMode === 'carousel' && !isMobile ? (
             <div className="work-track-viewport" ref={viewportRef}>
               <div className="grid" ref={trackRef}>
                 {[0, 1, 2].map(function (setIndex) {
@@ -286,7 +300,7 @@ function WorkSection(props) {
             </div>
           )}
         </div>
-        <div className="work-view-toggle">
+        <div className="work-view-toggle" hidden={isMobile}>
           <button
             type="button"
             className="work-view-btn"
