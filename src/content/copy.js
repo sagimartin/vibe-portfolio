@@ -1,7 +1,7 @@
 export const COPY = {
   en: {
     nav: { home: 'Home', work: 'Portfolio', contact: 'Contact' },
-    bar: { sayHi: 'Say hi', language: 'Language', theme: 'Toggle theme' },
+    bar: { language: 'Language', theme: 'Toggle theme' },
     hero: {
       greeting: 'Hello.',
       beforeName: "I'm ",
@@ -37,7 +37,7 @@ export const COPY = {
   },
   hu: {
     nav: { home: 'Kezdőlap', work: 'Portfólió', contact: 'Kapcsolat' },
-    bar: { sayHi: 'Köszönj', language: 'Nyelv', theme: 'Téma váltása' },
+    bar: { language: 'Nyelv', theme: 'Téma váltása' },
     hero: {
       greeting: 'Szia.',
       beforeName: '',
