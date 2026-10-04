@@ -7,6 +7,7 @@ import { goToSection } from '../lib/motion.js'
 function SiteBar({ language, onLanguageChange, strings }) {
   const [away, setAway] = useState(false)
   const [inContact, setInContact] = useState(false)
+  const [inHero, setInHero] = useState(true)
   const lastY = useRef(0)
 
   useEffect(() => {
@@ -38,6 +39,9 @@ function SiteBar({ language, onLanguageChange, strings }) {
 
       const contact = document.getElementById('contact')
       if (contact) setInContact(contact.getBoundingClientRect().top <= window.innerHeight * 0.4)
+
+      const hero = document.getElementById('hero')
+      if (hero) setInHero(hero.getBoundingClientRect().bottom > window.innerHeight * 0.55)
     }
 
     onScroll()
@@ -53,6 +57,8 @@ function SiteBar({ language, onLanguageChange, strings }) {
     }
   }, [])
 
+  const hideHi = inContact || inHero
+
   return (
     <div id="navroot">
       <div className={away ? 'nb-top away' : 'nb-top'}>
@@ -63,9 +69,9 @@ function SiteBar({ language, onLanguageChange, strings }) {
       </div>
       <button
         type="button"
-        className={inContact ? 'nb-hi gone' : 'nb-hi'}
-        tabIndex={inContact ? -1 : 0}
-        aria-hidden={inContact}
+        className={hideHi ? 'nb-hi gone' : 'nb-hi'}
+        tabIndex={hideHi ? -1 : 0}
+        aria-hidden={hideHi}
         onClick={() => goToSection('contact')}
       >
         <span>{strings.sayHi}</span>
