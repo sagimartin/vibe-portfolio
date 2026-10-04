@@ -372,3 +372,8 @@ html{background:var(--bg)}
 .ft-roll{padding-top:0;row-gap:64px}
 .ft-uphold{padding-top:0}
 }
+
+/* phones: language and theme live in the footer only */
+@media (max-width:768px){
+#navroot{display:none}
+}
