@@ -1,31 +1,18 @@
-function LanguageSwitch(props) {
-  var language = props.language
-  var onChange = props.onChange
-  var variant = props.variant || 'footer'
+const OPTIONS = ['en', 'hu']
 
-  function setLanguage(next) {
-    if (typeof onChange === 'function') onChange(next)
-  }
-  var options = ['en', 'hu']
-  var className = 'language-switch language-switch-' + variant
-
+function LanguageSwitch({ language, onChange, label }) {
   return (
-    <div className={className} role="group" aria-label="Language">
-      {options.map(function (option) {
-        return (
-          <button
-            type="button"
-            key={option}
-            className={language === option ? 'language-option is-active' : 'language-option'}
-            onClick={function () {
-              setLanguage(option)
-            }}
-            aria-pressed={language === option}
-          >
-            {option.toUpperCase()}
-          </button>
-        )
-      })}
+    <div className="langpill" role="group" aria-label={label || 'Language'}>
+      {OPTIONS.map((option) => (
+        <button
+          type="button"
+          key={option}
+          aria-pressed={language === option}
+          onClick={() => onChange(option)}
+        >
+          {option.toUpperCase()}
+        </button>
+      ))}
     </div>
   )
 }

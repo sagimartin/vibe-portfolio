@@ -22,7 +22,8 @@ to start collecting page views.
 
 ## Content & Translations
 
-- UI copy: `src/content/copy.js`
+- UI copy (EN/HU): `src/content/copy.js`
+- Contact chat copy (EN/HU): `src/content/chatCopy.js`
 - Project translations (HU): `src/content/projectTranslations.js`
 - Tag labels: `src/content/tagLabels.js`
 - Project images: `src/content/projectImages.js`
@@ -33,9 +34,19 @@ To add a project:
 2. Add matching images and update `src/content/projectImages.js`.
 3. Optional: add HU summary/description in `src/content/projectTranslations.js`.
 
+## Page structure
+
+- `Hero` – intro typing, rotating roles, spinning asterisk
+- `Work` – project rows (marquee titles that slide on scroll, details open inline)
+- `Snapshot` – live order / sales estimate with an odometer (`src/lib/liveStats.js`)
+- `Contact` – guided chat (`src/chat/createChat.js`) that ends in a ready-made `mailto:` link.
+  Chat state lives in `sessionStorage` (`sagi-chat`); nothing is sent to a server.
+- `SiteBar` – language + theme switch (hides while scrolling down) and the floating "Say hi" button
+- Project tags in `projects.json` are kept but not shown in the UI.
+
 ## Theme
 
-Theme is controlled by the `ThemeSwitch` component. It sets `data-theme` on `<html>`
+Theme is shared through `src/lib/theme.js` (used by every `ThemeSwitch`). It sets `data-theme` on `<html>`
 and updates the browser `theme-color` meta for iOS Safari.
 
 ## Deploy
