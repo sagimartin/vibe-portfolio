@@ -373,7 +373,7 @@ html{background:var(--bg)}
 .ft-uphold{padding-top:0}
 }
 
-/* phones: language and theme live in the footer only */
-@media (max-width:768px){
+/* phones, tablets and narrow windows: language and theme live in the footer only */
+@media (max-width:1024px),(hover:none) and (pointer:coarse){
 #navroot{display:none}
 }
