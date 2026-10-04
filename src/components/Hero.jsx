@@ -7,6 +7,7 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
   const [rotOn, setRotOn] = useState(false)
   const [typed, setTyped] = useState('')
   const [scrolled, setScrolled] = useState(false)
+  const [hintReady, setHintReady] = useState(false)
   const introDone = useRef(false)
   const roles = strings.roles
   const rolesKey = roles.join('|')
@@ -51,7 +52,10 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
   useEffect(() => {
     if (!rotOn) return undefined
     if (prefersReducedMotion()) {
-      const t = setTimeout(() => setTyped(roles[0]), 0)
+      const t = setTimeout(() => {
+        setTyped(roles[0])
+        setHintReady(true)
+      }, 0)
       return () => clearTimeout(t)
     }
 
@@ -70,6 +74,7 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
         } else {
           deleting = true
           delay = 1400
+          if (index === 0) setHintReady(true)
         }
       } else if (text.length > 0) {
         text = current.slice(0, text.length - 1)
@@ -123,8 +128,9 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
       </div>
       <button
         type="button"
-        className={scrolled ? 'scrollhint gone' : 'scrollhint'}
-        tabIndex={scrolled ? -1 : 0}
+        className={'scrollhint' + (hintReady ? ' ready' : '') + (scrolled ? ' gone' : '')}
+        tabIndex={scrolled || !hintReady ? -1 : 0}
+        aria-hidden={!hintReady}
         onClick={() => goToSection('work')}
       >
         <span>{scrollLabel}</span>

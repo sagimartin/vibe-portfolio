@@ -377,3 +377,6 @@ html{background:var(--bg)}
 @media (max-width:1024px),(hover:none) and (pointer:coarse){
 #navroot{display:none}
 }
+
+/* the scroll hint appears once the first role has been typed out */
+.scrollhint:not(.ready){opacity:0;pointer-events:none}
