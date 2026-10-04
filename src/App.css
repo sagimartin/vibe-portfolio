@@ -369,3 +369,6 @@ input[type=date]{cursor:pointer}
 .scrollhint svg{animation:none}
 }
 .scrollhint.gone{opacity:0;pointer-events:none}
+
+/* phones: an opened project starts flush with the top of the screen */
+@media (max-width:768px){.item{scroll-margin-top:0}}

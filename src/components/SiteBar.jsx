@@ -12,15 +12,29 @@ function SiteBar({ language, onLanguageChange, strings }) {
   useEffect(() => {
     lastY.current = window.scrollY
 
+    let sliding = false
+
+    function onSlideStart() {
+      sliding = true
+      setAway(true)
+    }
+
+    function onSlideEnd() {
+      sliding = false
+      lastY.current = window.scrollY
+    }
+
     function onScroll() {
       const y = window.scrollY
       const delta = y - lastY.current
 
-      if (Math.abs(delta) > 6) {
-        setAway(delta > 0 && y > 90)
-        lastY.current = y
+      if (!sliding) {
+        if (Math.abs(delta) > 6) {
+          setAway(delta > 0 && y > 90)
+          lastY.current = y
+        }
+        if (y <= 40) setAway(false)
       }
-      if (y <= 40) setAway(false)
 
       const contact = document.getElementById('contact')
       if (contact) setInContact(contact.getBoundingClientRect().top <= window.innerHeight * 0.4)
@@ -29,9 +43,13 @@ function SiteBar({ language, onLanguageChange, strings }) {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
+    window.addEventListener('slide:start', onSlideStart)
+    window.addEventListener('slide:end', onSlideEnd)
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
+      window.removeEventListener('slide:start', onSlideStart)
+      window.removeEventListener('slide:end', onSlideEnd)
     }
   }, [])
 

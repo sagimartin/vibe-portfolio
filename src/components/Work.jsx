@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowNE } from './icons.jsx'
-import { prefersReducedMotion, scrollBehavior } from '../lib/motion.js'
+import { prefersReducedMotion, slideToNode } from '../lib/motion.js'
 
 const isVector = (src) => /\.svg(\?|$)/.test(src || '') || /^data:image\/svg/.test(src || '')
 
@@ -36,13 +36,11 @@ function Work({ strings, projects, ariaLabel }) {
   const toggle = useCallback(
     (id, index) => {
       const willOpen = openId !== id
+      const closing = openId ? document.getElementById('detail-' + openId) : null
       setOpenId(willOpen ? id : null)
 
       if (willOpen) {
-        setTimeout(() => {
-          const node = itemRefs.current[index]
-          if (node) node.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
-        }, 60)
+        setTimeout(() => slideToNode(itemRefs.current[index], closing), 0)
       }
     },
     [openId]
