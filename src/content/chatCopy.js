@@ -90,7 +90,7 @@ export const CHAT_COPY = {
     ],
     ansAbout: ["I'd rather talk it through in an online meeting"],
     ansSite: [],
-    ansProb: ["I'll explain in the email"],
+    ansProb: [],
     ansIdea: ["I'll explain in the email"],
     ansKind: ['Custom development', 'B2B / wholesale ordering', 'Migration', 'Audit / consulting', 'Other'],
     ansTime: ['As soon as possible', 'In 1–2 months'],
@@ -191,7 +191,7 @@ export const CHAT_COPY = {
     ],
     ansAbout: ['Inkább beszéljük meg online meet-en'],
     ansSite: [],
-    ansProb: ['Majd leírom a levélben'],
+    ansProb: [],
     ansIdea: ['Majd leírom a levélben'],
     ansKind: [
       'Egyedi fejlesztés',
