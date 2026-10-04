@@ -1,28 +1,30 @@
 import { useSyncExternalStore } from 'react'
 
 let themeMem = null
-let hasLocalStorage = null
+let hasStorage = null
 
-function canUseLocalStorage() {
+/* The theme follows the device setting by default. A manual choice only lasts for the
+   current browser session (sessionStorage), so every new visit starts from the device again. */
+function canUseStorage() {
   try {
     const key = '__t__' + String(Date.now())
-    localStorage.setItem(key, '1')
-    localStorage.removeItem(key)
+    sessionStorage.setItem(key, '1')
+    sessionStorage.removeItem(key)
     return true
   } catch {
     return false
   }
 }
 
-function getHasLocalStorage() {
-  if (hasLocalStorage === null) hasLocalStorage = canUseLocalStorage()
-  return hasLocalStorage
+function getHasStorage() {
+  if (hasStorage === null) hasStorage = canUseStorage()
+  return hasStorage
 }
 
 function readStoredTheme() {
-  if (getHasLocalStorage()) {
+  if (getHasStorage()) {
     try {
-      return localStorage.getItem('theme')
+      return sessionStorage.getItem('theme')
     } catch {
       return themeMem
     }
@@ -32,9 +34,18 @@ function readStoredTheme() {
 
 function writeStoredTheme(value) {
   themeMem = value
-  if (!getHasLocalStorage()) return
+  if (!getHasStorage()) return
   try {
-    localStorage.setItem('theme', value)
+    sessionStorage.setItem('theme', value)
+  } catch {
+    // ignore
+  }
+}
+
+function clearLegacyChoice() {
+  // earlier versions remembered the choice forever in localStorage
+  try {
+    localStorage.removeItem('theme')
   } catch {
     // ignore
   }
@@ -60,6 +71,7 @@ function apply(theme) {
 }
 
 if (typeof window !== 'undefined') {
+  clearLegacyChoice()
   apply(current)
   const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null
   if (mq) {
