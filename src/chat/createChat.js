@@ -86,7 +86,7 @@ const STEPQ = {
   time: ['qTime', 'ansTime', 'lbTime']
 }
 const SITE_RE = /^(https?:\/\/)?[^\s/]+\.[^\s/]{2,}(\/\S*)?$/i
-const TYPEFIRST = { name: 1, site: 1, prod: 1, about: 1 }
+const TYPEFIRST = { name: 1, site: 1, prod: 1, about: 1, prob: 1 }
 const STEPPH = {
     about: 'phAbout',
     site: 'phSite',
@@ -94,10 +94,11 @@ const STEPPH = {
     plat: 'phPlat',
     lang: 'phLang',
     mkt: 'phMkt',
-    prod: 'phProd'
+    prod: 'phProd',
+    prob: 'phProb'
   },
   OTHER = { plat: 4, lang: 3, mkt: 3 },
-  MULTI = { integ: 5, prob: -1, kind: -1 }
+  MULTI = { integ: 5, kind: -1 }
 const stepsFor = (k) => {
   const a = CHAT.ans
   switch (k) {
@@ -233,7 +234,17 @@ function cChat(m) {
           return
         }
         const [, a, lb] = STEPQ[s]
-        if ((a === 'ansSite' || a === 'ansIdea') && typeof raw === 'object' && raw.i === 0) return
+        if (s === 'prob' && typeof raw === 'string') {
+          lines.push(
+            t[lb] +
+              ':\n' +
+              (aboutMax && raw.length > aboutMax ? raw.slice(0, aboutMax).trimEnd() + '…' : raw) +
+              '\n'
+          )
+          return
+        }
+        if ((a === 'ansSite' || a === 'ansIdea' || a === 'ansProb') && typeof raw === 'object' && raw.i === 0)
+          return
         lines.push(t[lb] + ': ' + ansText(s))
       })
       body =
@@ -261,7 +272,10 @@ function cChat(m) {
         note = note.slice(0, Math.max(0, note.length - 60)).trimEnd()
         if (note.length < 2) note = ''
       } else {
-        const raw = typeof CHAT.ans.about === 'string' ? CHAT.ans.about.length : 0
+        const raw = Math.max(
+          typeof CHAT.ans.about === 'string' ? CHAT.ans.about.length : 0,
+          typeof CHAT.ans.prob === 'string' ? CHAT.ans.prob.length : 0
+        )
         if (!raw || am === 100) break
         am = Math.max(100, (am || raw) - 80)
       }
@@ -309,7 +323,7 @@ function cChat(m) {
             item.defVal = 'www.'
             item.mode = 'url'
           }
-          if (s === 'about') {
+          if (s === 'about' || s === 'prob') {
             item.paragraph = true
             item.max = 800
           }
@@ -790,7 +804,7 @@ function cChat(m) {
       nudge(v, 'timeHint')
       return
     }
-    if (p !== 'about') v = v.replace(/\s*\n+\s*/g, ' ')
+    if (p !== 'about' && p !== 'prob') v = v.replace(/\s*\n+\s*/g, ' ')
     if (p === 'site') v = v.replace(/^www\.(?=https?:\/\/)/i, '')
     if (p === 'prod' && !/\d/.test(v)) {
       nudge(v, 'prodHint')
