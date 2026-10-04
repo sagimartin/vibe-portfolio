@@ -364,3 +364,11 @@ textarea,input:not([type=checkbox]):not([type=radio]){cursor:text}
 
 /* iOS Safari tints the status bar and the toolbar area with the root element's background */
 html{background:var(--bg)}
+
+/* single-column footer: the back-to-top circle sits exactly between the chat and the links */
+@media (max-width:860px){
+.contact{padding-bottom:0}
+.contact .wrap{padding-bottom:64px}
+.ft-roll{padding-top:0;row-gap:64px}
+.ft-uphold{padding-top:0}
+}
