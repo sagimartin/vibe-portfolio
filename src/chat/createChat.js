@@ -97,7 +97,6 @@ const STEPPH = {
     prod: 'phProd'
   },
   OTHER = { plat: 4, lang: 3, mkt: 3 },
-  DATE = { time: 2 },
   MULTI = { integ: 5, prob: -1, kind: -1 }
 const stepsFor = (k) => {
   const a = CHAT.ans
@@ -130,7 +129,7 @@ const ansText = (s) => {
     t = T[lang],
     key = STEPQ[s][1]
   if (a && typeof a === 'object') {
-    if (a.d) return fmtDate(a.d)
+    if (a.d) return a.d
     if (a.m) {
       const p = a.m.map((i) => t[key][i])
       if (a.t) p.push(a.t)
@@ -140,14 +139,6 @@ const ansText = (s) => {
   }
   return a
 }
-const fmtDate = (iso) =>
-  new Date(iso + 'T12:00:00').toLocaleDateString(lang === 'hu' ? 'hu-HU' : 'en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-const todayISO = () =>
-  new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
 function cChat(m) {
   let alive = true
   cOffs.push(() => {
@@ -369,25 +360,23 @@ function cChat(m) {
             })
           } else
             item.items = opts.map((o, i) =>
-              DATE[s] === i
-                ? { label: o, cls: 'ghost', date: true }
-                : OTHER[s] === i
-                  ? {
-                      label: o,
-                      cls: 'ghost',
-                      fn: () => {
-                        inp.placeholder = t[STEPPH[s]]
-                        inp.setAttribute('aria-label', t[STEPPH[s]])
-                        focusIn()
-                      }
+              OTHER[s] === i
+                ? {
+                    label: o,
+                    cls: 'ghost',
+                    fn: () => {
+                      inp.placeholder = t[STEPPH[s]]
+                      inp.setAttribute('aria-label', t[STEPPH[s]])
+                      focusIn()
                     }
-                  : {
-                      label: o,
-                      fn: () => {
-                        CHAT.ans[s] = { i }
-                        advance()
-                      }
+                  }
+                : {
+                    label: o,
+                    fn: () => {
+                      CHAT.ans[s] = { i }
+                      advance()
                     }
+                  }
             )
           break
         }
@@ -466,44 +455,6 @@ function cChat(m) {
     if (!nx) return
     const s = pending()
     nx.disabled = !(s && CHAT.sel[s] && CHAT.sel[s].length)
-  }
-  function toggleDate(c) {
-    let r = c.querySelector('.dp')
-    if (r) {
-      r.remove()
-      return
-    }
-    const t = T[lang]
-    r = el('div', 'dp')
-    const di = el('input')
-    di.type = 'date'
-    di.id = 'cdate'
-    di.min = todayISO()
-    di.setAttribute('aria-label', t.dateAria)
-    let tm = 0,
-      done = false
-    const ok = () => !!di.value && di.value >= todayISO()
-    const commit = () => {
-      if (done || !ok()) return
-      done = true
-      clearTimeout(tm)
-      CHAT.ans.time = { d: di.value }
-      advance()
-    }
-    di.addEventListener('input', () => {
-      clearTimeout(tm)
-      if (ok()) tm = setTimeout(commit, 450)
-    })
-    di.addEventListener('change', commit)
-    r.appendChild(di)
-    c.appendChild(r)
-    down(true)
-    try {
-      di.showPicker && di.showPicker()
-    } catch {
-      /* ignore */
-    }
-    di.focus({ preventScroll: true })
   }
   function placeUndo(x) {
     if (undoNode) {
@@ -628,8 +579,7 @@ function cChat(m) {
             n.classList.toggle('on', on)
             syncNext(c)
           })
-        } else if (it.date) n.addEventListener('click', () => toggleDate(c))
-        else n.addEventListener('click', it.fn)
+        } else n.addEventListener('click', it.fn)
         c.appendChild(n)
       })
       c.addEventListener('keydown', (e) => {
