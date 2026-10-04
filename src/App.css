@@ -372,3 +372,6 @@ input[type=date]{cursor:pointer}
 
 /* phones: an opened project starts flush with the top of the screen */
 @media (max-width:768px){.item{scroll-margin-top:0}}
+
+/* iOS Safari tints the status bar and the toolbar area with the root element's background */
+html{background:var(--bg)}
