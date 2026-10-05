@@ -82,11 +82,10 @@ const STEPQ = {
   site: ['qSite', 'ansSite', 'lbSite'],
   prob: ['qProb', 'ansProb', 'lbProb'],
   idea: ['qIdea', 'ansIdea', 'lbIdea'],
-  kind: ['qKind', 'ansKind', 'lbKind'],
   time: ['qTime', 'ansTime', 'lbTime']
 }
 const SITE_RE = /^(https?:\/\/)?[^\s/]+\.[^\s/]{2,}(\/\S*)?$/i
-const TYPEFIRST = { name: 1, site: 1, prod: 1, about: 1, prob: 1 }
+const TYPEFIRST = { name: 1, site: 1, prod: 1, about: 1, prob: 1, idea: 1 }
 const STEPPH = {
     about: 'phAbout',
     site: 'phSite',
@@ -98,7 +97,7 @@ const STEPPH = {
     prob: 'phProb'
   },
   OTHER = { plat: 4, lang: 3, mkt: 3 },
-  MULTI = { integ: 5, kind: -1 }
+  MULTI = { integ: 5 }
 const stepsFor = (k) => {
   const a = CHAT.ans
   switch (k) {
@@ -118,7 +117,7 @@ const stepsFor = (k) => {
     case 'ux':
       return ['name', 'site', 'uxplat', 'prob', 'time']
     case 'other':
-      return ['name', 'idea', 'kind', 'time']
+      return ['name', 'idea', 'time']
     case 'free':
       return ['name']
     default:
@@ -323,7 +322,7 @@ function cChat(m) {
             item.defVal = 'www.'
             item.mode = 'url'
           }
-          if (s === 'about' || s === 'prob') {
+          if (s === 'about' || s === 'prob' || s === 'idea') {
             item.paragraph = true
             item.max = 800
           }
@@ -542,11 +541,12 @@ function cChat(m) {
     inp.inputMode = x.mode || 'text'
     inp.maxLength = x.max || 300
     paragraph = !!x.paragraph
-    inp.enterKeyHint = x.paragraph && coarse ? 'enter' : 'send'
+    inp.enterKeyHint = x.paragraph ? 'enter' : 'send'
     if (x.defVal !== undefined) {
       if (!inp.value) typeDef(x.defVal)
     } else if (inp.value === 'www.') inp.value = ''
     inp.setAttribute('aria-label', x.ph)
+    form.classList.toggle('para', !!x.paragraph)
     form.classList.toggle('ready', !!x.ready)
     form.classList.toggle('blocked', !!x.blocked)
     if (x.ready || x.blocked) {
@@ -834,7 +834,8 @@ function cChat(m) {
   })
   inp.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      if (e.shiftKey || (paragraph && coarse)) return
+      if (paragraph && !(e.metaKey || e.ctrlKey)) return
+      if (e.shiftKey) return
       e.preventDefault()
       form.requestSubmit()
     } else if (e.key === 'Escape') inp.blur()

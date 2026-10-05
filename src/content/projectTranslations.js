@@ -26,7 +26,7 @@ export const PROJECT_TRANSLATIONS = {
         'A TAÁTI Pastry Studio egy budapesti boutique cukrász márka, ahol a desszertek közös rituáléként jelennek meg.\n\nA D2C felület mellett külön B2B oldal is készült, egyedi B2B rendelési logikával a nagyker és partner megrendelési folyamatokhoz.\n\nA vásárlók a kosárban előre választható dátum- és idősávfoglalással tudnak rendelni személyes átvételhez vagy kiszállításhoz.\n\nLátogass el a taatipastry.hu oldalra, és ismerd meg a TAÁTI élményt.'
     },
     'celeni-hu': {
-      summary: 'Divatház, belsőépítészet & wellness retreatek',
+      summary: 'Divat, belsőépítészet & wellness',
       description:
         "A Celeni egy budapesti divatmárka, amely a precíz szabászatra és az időtlen, könnyed eleganciájú sziluettekre épül.\n\nMára a ruházaton és kiegészítőkön túl teljes életmód-márkává nőtte ki magát: a Celeni Design belsőépítészeti stílustervezést, brand- és social media szolgáltatásokat kínál, a Camp Anima pedig egy szezonális wellness retreat — pilates, regeneráló jóga és közös étkezések a természetben."
     },

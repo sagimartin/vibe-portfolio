@@ -65,7 +65,7 @@ section{scroll-margin-top:72px}
 .logo img{width:auto;height:auto;max-width:min(380px,100%);max-height:150px;object-fit:contain;object-position:center}
 .logo .l{display:var(--logo-l)}
 .logo .d{display:var(--logo-d)}
-.lead{font:600 clamp(22px,2.6vw,32px)/1.2 var(--font-display);letter-spacing:-.02em;color:var(--text);margin-bottom:6px}
+.lead{font:600 clamp(22px,2.6vw,32px)/1.2 var(--font-display);letter-spacing:-.02em;text-transform:uppercase;color:var(--text);margin-bottom:6px}
 .dbody{display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.65;color:var(--muted);max-width:62ch}
 .cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:14px;border:2px solid var(--border);background:transparent;color:var(--text);font:600 14px/1 var(--font-sans);letter-spacing:-.01em;min-height:44px;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
 .cta:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(0,0,0,.18)}
@@ -201,6 +201,7 @@ html{scroll-behavior:auto}
 .cchat{height:clamp(400px,58vh,560px)}
 .cf-in textarea{flex:1 1 200px;min-width:0;min-height:46px;max-height:150px;padding:12px 18px;border-radius:23px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:500 15px/1.4 var(--font-sans);outline:none;resize:none;caret-color:var(--text);overflow-y:auto}
 .cf-in textarea:focus{border-color:var(--accent)}
+.cf-in.para textarea{min-height:calc(4 * 1.4em + 28px);border-radius:18px}
 .cf-in textarea:disabled{opacity:.55;cursor:not-allowed}
 .cf-in textarea.wait{opacity:.6}
 .cf-in.ready textarea{flex:1 1 100%}
@@ -384,4 +385,9 @@ html{background:var(--bg)}
 /* phones: every logo gets a similar visual area (from its aspect ratio), centred at the top */
 @media (max-width:768px){
 .logo[data-key] img{width:min(calc(sqrt(15600 * var(--ar,3)) * var(--ls,1) * 1px),calc(130px * var(--ar,3) * var(--ls,1)),300px,100%);height:auto;max-height:none;margin-block:0}
+.bub{padding:10px 14px}
+.dbody .lead{text-align:center}
+.dbody .cta.fill{align-self:flex-end}
+/* the taati file has transparent padding above and below the mark */
+.logo[data-key="taati"] img{margin-block:-45px -30px}
 }
