@@ -74,7 +74,7 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
         } else {
           deleting = true
           delay = 1400
-          if (index === 0) setHintReady(true)
+          if (index === roles.length - 1) setHintReady(true)
         }
       } else if (text.length > 0) {
         text = current.slice(0, text.length - 1)

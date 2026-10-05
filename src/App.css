@@ -378,5 +378,5 @@ html{background:var(--bg)}
 #navroot{display:none}
 }
 
-/* the scroll hint appears once the first role has been typed out */
+/* the scroll hint appears once all three roles have been typed out */
 .scrollhint:not(.ready){opacity:0;pointer-events:none}
