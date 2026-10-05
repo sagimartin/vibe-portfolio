@@ -122,7 +122,11 @@ function Work({ strings, projects, ariaLabel }) {
                         rel="noopener noreferrer"
                         aria-label={project.title}
                       >
-                        <div className="logo" data-key={project.imageKey}>
+                        <div
+                          className="logo"
+                          data-key={project.imageKey}
+                          style={{ '--ar': project.logoRatio, '--ls': project.logoScale }}
+                        >
                           {project.imageLight ? (
                             <img
                               className={isVector(project.imageLight) ? 'l vec' : 'l'}

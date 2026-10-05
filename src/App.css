@@ -380,3 +380,8 @@ html{background:var(--bg)}
 
 /* the scroll hint appears once all three roles have been typed out */
 .scrollhint:not(.ready){opacity:0;pointer-events:none}
+
+/* phones: every logo gets a similar visual area (from its aspect ratio), centred at the top */
+@media (max-width:768px){
+.logo[data-key] img{width:min(calc(sqrt(15600 * var(--ar,3)) * var(--ls,1) * 1px),calc(130px * var(--ar,3) * var(--ls,1)),300px,100%);height:auto;max-height:none;margin-block:0}
+}

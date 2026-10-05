@@ -22,3 +22,15 @@ export const PROJECT_IMAGES = {
   celeni: { light: celeniBlack, dark: celeniWhite },
   vitezkurtos: { light: vitezkurtosBlack, dark: vitezkurtosWhite }
 }
+
+// natural aspect ratios (width / height) of the logo files, plus an optical size correction.
+// The mobile layout sizes every logo to a similar visual area from these numbers.
+export const PROJECT_LOGO_FIT = {
+  smellgo: { ratio: 4.03 },
+  viverte: { ratio: 1.64 },
+  pemdelian: { ratio: 7.01 },
+  taati: { ratio: 0.75, scale: 1.6 },
+  mistyMonday: { ratio: 11.1 },
+  celeni: { ratio: 3.67 },
+  vitezkurtos: { ratio: 5.05 }
+}
