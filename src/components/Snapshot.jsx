@@ -38,6 +38,7 @@ function Snapshot({ strings, language, ariaLabel }) {
   const rowRefs = useRef([])
   const [ordersRef, ordersVisible] = useVisible(0.5)
   const [valueRef, valueVisible] = useVisible(0.5)
+  const [ratingRef, ratingVisible] = useVisible(0.5)
 
   useEffect(() => {
     const id = window.setInterval(() => setStats(getLiveStats()), 60000)
@@ -123,6 +124,31 @@ function Snapshot({ strings, language, ariaLabel }) {
                 >
                   <Odometer value={valueText} active={valueVisible} />
                 </strong>
+              </div>
+            </div>
+          </div>
+          <div
+            className="srow"
+            ref={(node) => {
+              rowRefs.current[2] = node
+            }}
+          >
+            <div className="sgutter">
+              <div className="sin">
+                <span className="slab">{strings.ratingLabel}</span>
+                <strong
+                  className="sbig"
+                  ref={(node) => {
+                    bigRefs.current[2] = node
+                    ratingRef.current = node
+                  }}
+                >
+                  <Odometer value={strings.ratingValue} active={ratingVisible} />
+                  <small>★</small>
+                </strong>
+                <a className="snote" href={strings.ratingUrl} target="_blank" rel="noopener noreferrer">
+                  {strings.ratingNote} ↗
+                </a>
               </div>
             </div>
           </div>

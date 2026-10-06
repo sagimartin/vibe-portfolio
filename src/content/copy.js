@@ -19,7 +19,11 @@ export const COPY = {
       eyebrow: 'Commerce Snapshot',
       title: 'My projects\nin numbers.',
       ordersLabel: 'Orders',
-      valueLabel: 'Estimated gross sales'
+      valueLabel: 'Estimated gross sales',
+      ratingLabel: 'Shopify Partner rating',
+      ratingValue: '5.0',
+      ratingNote: '4 reviews on Shopify Partners',
+      ratingUrl: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v'
     },
     contact: {
       eyebrow: 'Contact',
@@ -55,7 +59,11 @@ export const COPY = {
       eyebrow: 'Kereskedelmi mutatók',
       title: 'Projektjeim\nszámokban.',
       ordersLabel: 'Rendelések',
-      valueLabel: 'Becsült bruttó értékesítés'
+      valueLabel: 'Becsült bruttó értékesítés',
+      ratingLabel: 'Shopify Partner értékelés',
+      ratingValue: '5.0',
+      ratingNote: '4 értékelés a Shopify Partners oldalon',
+      ratingUrl: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v'
     },
     contact: {
       eyebrow: 'Kapcsolat',
