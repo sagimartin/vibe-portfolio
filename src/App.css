@@ -393,11 +393,6 @@ html{background:var(--bg)}
 }
 
 .slink{display:inline-flex;align-items:center;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
-.sstar{width:.78em;height:.78em;margin-left:.06em;margin-top:.03em;fill:transparent;stroke:var(--hov);stroke-width:1.2;stroke-linejoin:round;transition:fill .3s}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
-.sstar .so{transition:fill .3s}
-.sstar .si{stroke-width:1.5}
-.slink:hover .sstar .so,.slink:focus-visible .sstar .so{fill:var(--hov)}
-.slink:hover .sstar .si,.slink:focus-visible .sstar .si{stroke:var(--bg)}
-.slink small{color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;margin-right:.16em;transition:color .3s}
+.slink small{color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;transition:color .3s}
 .slink:hover small,.slink:focus-visible small{color:var(--hov)}
