@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import Odometer from './Odometer.jsx'
-import { ArrowNE } from './icons.jsx'
 import {
   ECB_HUF_PER_EUR,
   formatCompactCurrency,
@@ -154,7 +153,10 @@ function Snapshot({ strings, language, ariaLabel }) {
                     <Odometer value={strings.ratingValue} active={ratingVisible} />
                     <small>
                       /5
-                      <ArrowNE className="ico sarrow" />
+                      <svg className="ico sarrow" viewBox="0 0 24 24" aria-hidden="true">
+                        <path className="a1" d="M7 17 17 7M8 7h9v9" />
+                        <path className="a2" d="M7 17 17 7M8 7h9v9" />
+                      </svg>
                     </small>
                   </a>
                 </strong>
