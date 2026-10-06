@@ -164,7 +164,7 @@ function Snapshot({ strings, language, ariaLabel }) {
                       viewBox="0 0 24 24"
                       aria-hidden="true"
                     >
-                      <path d="M12 2.6l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
+                      <path d="M12 4.4l2.35 4.95 5.4.7-3.95 3.75 1 5.35L12 16.5l-4.8 2.65 1-5.35-3.95-3.75 5.4-.7z" />
                     </svg>
                   </a>
                 </strong>

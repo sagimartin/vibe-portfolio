@@ -246,7 +246,7 @@ footer#foot{border-top:0;padding:0;color:var(--muted);font-size:14px;position:re
 .cf-in .go .ico{width:20px;height:20px}
 .cf-in .sm{gap:8px}
 .cf-in .sm .ico{width:17px;height:17px}
-.ft-roll a .ico{width:.62em;height:.62em;margin-left:.18em;vertical-align:-.02em;stroke-width:2.4}
+.ft-roll a .ico{width:.7em;height:.7em;margin-left:.18em;vertical-align:-.02em;stroke-width:2.4}
 .ft-uphold{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;text-align:center;padding-top:6px}
 .ft-uphold small{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .hero-title{font-size:clamp(48px,13.5vw,150px);line-height:1.02;letter-spacing:-.045em;gap:.04em}
@@ -393,6 +393,6 @@ html{background:var(--bg)}
 }
 
 .slink{display:inline-block;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
-.sstar{width:.56em;height:.56em;margin-left:.06em;vertical-align:.1em;fill:transparent;stroke:var(--hov);stroke-width:1.5;stroke-linejoin:round;transition:fill .3s}
+.sstar{width:.7em;height:.7em;margin-left:.06em;vertical-align:.1em;fill:transparent;stroke:var(--hov);stroke-width:1.2;stroke-linejoin:round;transition:fill .3s}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
 .slink:hover .sstar,.slink:focus-visible .sstar{fill:var(--hov)}
