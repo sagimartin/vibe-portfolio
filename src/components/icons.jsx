@@ -15,3 +15,12 @@ export function ArrowUp(props) {
     </svg>
   )
 }
+
+export function ArrowNEOutline(props) {
+  return (
+    <svg className="ico ico2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path className="a1" d="M7 17 17 7M8 7h9v9" />
+      <path className="a2" d="M7 17 17 7M8 7h9v9" />
+    </svg>
+  )
+}

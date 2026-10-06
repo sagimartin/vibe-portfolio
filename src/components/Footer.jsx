@@ -1,6 +1,6 @@
 import LanguageSwitch from './LanguageSwitch.jsx'
 import ThemeSwitch from './ThemeSwitch.jsx'
-import { ArrowNE, ArrowUp } from './icons.jsx'
+import { ArrowNEOutline, ArrowUp } from './icons.jsx'
 import { prefersReducedMotion } from '../lib/motion.js'
 
 const EMAIL = 'hello@sagimartin.com'
@@ -12,11 +12,11 @@ function RollLink({ href, label, external }) {
     <a href={href} {...extra}>
       <span>
         {label}
-        <ArrowNE />
+        <ArrowNEOutline />
       </span>
       <span aria-hidden="true">
         {label}
-        <ArrowNE />
+        <ArrowNEOutline />
       </span>
     </a>
   )
