@@ -143,12 +143,17 @@ function Snapshot({ strings, language, ariaLabel }) {
                     ratingRef.current = node
                   }}
                 >
-                  <Odometer value={strings.ratingValue} active={ratingVisible} />
-                  <small>★</small>
+                  <a
+                    className="slink"
+                    href={strings.ratingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={strings.ratingNote}
+                  >
+                    <Odometer value={strings.ratingValue} active={ratingVisible} />
+                    <small>★</small>
+                  </a>
                 </strong>
-                <a className="snote" href={strings.ratingUrl} target="_blank" rel="noopener noreferrer">
-                  {strings.ratingNote} ↗
-                </a>
               </div>
             </div>
           </div>
