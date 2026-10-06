@@ -151,12 +151,7 @@ function Snapshot({ strings, language, ariaLabel }) {
                     rel="noopener noreferrer"
                     aria-label={strings.ratingNote}
                   >
-                    <span className="sdbl">
-                      <Odometer value={strings.ratingValue} active={ratingVisible} />
-                      <span className="sdbl-top" aria-hidden="true">
-                        <Odometer value={strings.ratingValue} active={ratingVisible} />
-                      </span>
-                    </span>
+                    <Odometer value={strings.ratingValue} active={ratingVisible} />
                     <small>
                       /5
                       <ArrowNE className="ico sarrow" />
