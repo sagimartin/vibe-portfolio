@@ -393,6 +393,6 @@ html{background:var(--bg)}
 }
 
 .slink{display:inline-block;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
-.slink small{color:var(--muted);-webkit-text-stroke:0;transition:color .3s}
+.slink small{color:transparent}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
 .slink:hover small,.slink:focus-visible small{color:var(--hov)}
