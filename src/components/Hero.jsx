@@ -109,9 +109,9 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
           <h1 className="hero-title" aria-label={strings.greeting + ' ' + strings.beforeName + 'Martin' + strings.afterName}>
             <span className={line1On ? 'on' : ''}>{strings.greeting}</span>
             <span className={line2On ? 'on' : ''}>
-              {strings.beforeName}
+              {strings.beforeName && <span className="hero-out">{strings.beforeName}</span>}
               <span className="hero-name">Martin</span>
-              {strings.afterName}
+              {strings.afterName && <span className="hero-out">{strings.afterName}</span>}
               <span className="hero-ast" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path d="M12 1.5v21M2.9 6.75l18.2 10.5M2.9 17.25l18.2-10.5" />
