@@ -152,10 +152,8 @@ function Snapshot({ strings, language, ariaLabel }) {
                     aria-label={strings.ratingNote}
                   >
                     <Odometer value={strings.ratingValue} active={ratingVisible} />
-                    <small>
-                      /5
-                      <ArrowNE className="ico sarrow" />
-                    </small>
+                    <small>/5</small>
+                    <ArrowNE className="ico sarrow" />
                   </a>
                 </strong>
               </div>
