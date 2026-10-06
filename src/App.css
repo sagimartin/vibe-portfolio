@@ -400,3 +400,4 @@ html{background:var(--bg)}
 .slink .sarrow{width:.56em;height:.56em;margin-left:.14em;stroke:var(--text);stroke-width:2.4;transition:stroke .3s,transform .3s}
 .slink:hover .sarrow,.slink:focus-visible .sarrow{stroke:var(--text);transform:translate(.05em,-.05em)}
 .slink .dg{width:.66em}
+.slink .sslash{position:relative;top:-.094em}
