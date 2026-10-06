@@ -107,7 +107,7 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
       <div className="wrap">
         <div className="hero-block">
           <h1 className="hero-title" aria-label={strings.greeting + ' ' + strings.beforeName + 'Martin' + strings.afterName}>
-            <span className={line1On ? 'on' : ''}>{strings.greeting}</span>
+            <span className={line1On ? 'hero-out on' : 'hero-out'}>{strings.greeting}</span>
             <span className={line2On ? 'on' : ''}>
               {strings.beforeName && <span className="hero-out">{strings.beforeName}</span>}
               <span className="hero-name">Martin</span>
