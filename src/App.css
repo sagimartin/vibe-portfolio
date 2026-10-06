@@ -396,5 +396,5 @@ html{background:var(--bg)}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
 .slink small{font-size:.72em;color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;transition:color .3s}
 .slink:hover small,.slink:focus-visible small{color:var(--hov)}
-.sarrow{align-self:flex-start;width:.4em;height:.4em;margin:.16em 0 0 .12em;fill:none;stroke:var(--muted);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s,transform .3s}
-.slink:hover .sarrow,.slink:focus-visible .sarrow{stroke:var(--hov);transform:translate(.06em,-.06em)}
+.slink .sarrow{width:.8em;height:.8em;margin-left:.04em;stroke:var(--muted);stroke-width:2.4;transition:stroke .3s,transform .3s}
+.slink:hover .sarrow,.slink:focus-visible .sarrow{stroke:var(--hov);transform:translate(.05em,-.05em)}
