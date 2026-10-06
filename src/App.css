@@ -401,3 +401,4 @@ html{background:var(--bg)}
 .slink:hover .sarrow,.slink:focus-visible .sarrow{stroke:var(--text);transform:translate(.05em,-.05em)}
 .slink .dg{width:.66em}
 .slink .sslash{position:relative;top:-.094em}
+.cf-in input:not(:disabled),.cf-in textarea:not(:disabled){border-color:var(--accent)}
