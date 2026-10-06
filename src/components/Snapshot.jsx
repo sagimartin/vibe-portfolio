@@ -152,6 +152,9 @@ function Snapshot({ strings, language, ariaLabel }) {
                   >
                     <Odometer value={strings.ratingValue} active={ratingVisible} />
                     <small>/5</small>
+                    <svg className="sarrow" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 18L18 6M8 6h10v10" />
+                    </svg>
                   </a>
                 </strong>
               </div>
