@@ -399,3 +399,5 @@ html{background:var(--bg)}
 .sstar .si{stroke-width:1.5}
 .slink:hover .sstar .so,.slink:focus-visible .sstar .so{fill:var(--hov)}
 .slink:hover .sstar .si,.slink:focus-visible .sstar .si{stroke:var(--bg)}
+.slink small{color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;margin-right:.16em;transition:color .3s}
+.slink:hover small,.slink:focus-visible small{color:var(--hov)}
