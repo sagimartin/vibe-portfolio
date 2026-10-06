@@ -150,21 +150,19 @@ function Snapshot({ strings, language, ariaLabel }) {
                     rel="noopener noreferrer"
                     aria-label={strings.ratingNote}
                   >
-                    <span className="snum">
-                      <Odometer value={strings.ratingValue} active={ratingVisible} />
-                    </span>
-                    <span className={'sscale' + (ratingVisible ? ' on' : '')} aria-hidden="true">
-                      <span className="strack">
-                        <span className="sfill" />
-                        {[0, 1, 2, 3, 4, 5].map((n) => (
-                          <i key={n} style={{ left: n * 20 + '%' }} />
-                        ))}
-                      </span>
-                      <span className="sends">
-                        <span>0</span>
-                        <span>5</span>
-                      </span>
-                    </span>
+                    <Odometer value={strings.ratingValue} active={ratingVisible} />
+                    <small>/5</small>
+                    <svg className="sstar" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        className="so"
+                        d="M12 2.2l2.9 5.9 6.6.9-4.8 4.6 1.2 6.5L12 17l-5.9 3.1 1.2-6.5L2.5 9l6.6-.9z"
+                      />
+                      <path
+                        className="si"
+                        d="M12 4.4l2.35 4.95 5.4.7-3.95 3.75 1 5.35L12 16.5l-4.8 2.65 1-5.35-3.95-3.75 5.4-.7z"
+                        transform="translate(12 11.6) scale(.62) translate(-12 -11.6)"
+                      />
+                    </svg>
                   </a>
                 </strong>
               </div>
