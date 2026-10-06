@@ -402,4 +402,3 @@ html{background:var(--bg)}
 .slink .dg{width:.66em}
 .slink .sslash{position:relative;top:-.094em}
 .cf-in input:not(:disabled),.cf-in textarea:not(:disabled){border-color:var(--accent)}
-.hero-name{letter-spacing:-.005em;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--accent);paint-order:stroke fill}
