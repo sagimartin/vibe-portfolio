@@ -394,5 +394,5 @@ html{background:var(--bg)}
 
 .slink{display:inline-flex;align-items:center;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
-.slink small{color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;transition:color .3s}
+.slink small{font-size:.72em;color:var(--muted);-webkit-text-stroke:0;margin-left:.14em;transition:color .3s}
 .slink:hover small,.slink:focus-visible small{color:var(--hov)}
