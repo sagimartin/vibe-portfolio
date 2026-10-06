@@ -392,8 +392,8 @@ html{background:var(--bg)}
 .logo[data-key="taati"] img{margin-block:-45px -30px}
 }
 
-.slink{display:inline-block;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
-.sstar{width:.78em;height:.78em;margin-left:.06em;vertical-align:.1em;fill:transparent;stroke:var(--hov);stroke-width:1.2;stroke-linejoin:round;transition:fill .3s}
+.slink{display:inline-flex;align-items:center;color:transparent;-webkit-text-stroke:clamp(1.5px,.018em,3px) var(--hov);paint-order:stroke fill;text-decoration:none;transition:color .3s}
+.sstar{width:.78em;height:.78em;margin-left:.06em;margin-top:.03em;fill:transparent;stroke:var(--hov);stroke-width:1.2;stroke-linejoin:round;transition:fill .3s}
 .slink:hover,.slink:focus-visible{color:var(--hov)}
 .sstar .so{transition:fill .3s}
 .sstar .si{stroke-width:1.5}
