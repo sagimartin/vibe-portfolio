@@ -849,11 +849,13 @@ function cChat(m) {
   })
   renderAll(false)
   if (!coarse) {
+    if (!inp.disabled) focusIn()
     const io = new IntersectionObserver(
       (es) =>
         es.forEach((e) => {
-          if (e.isIntersecting && !inp.disabled && (document.activeElement === document.body || !document.activeElement))
-            focusIn()
+          if (!e.isIntersecting) {
+            if (document.activeElement === inp) inp.blur()
+          } else if (!inp.disabled && (document.activeElement === document.body || !document.activeElement)) focusIn()
         }),
       { threshold: 0.3 }
     )
