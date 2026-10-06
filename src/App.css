@@ -399,3 +399,4 @@ html{background:var(--bg)}
 .slink small{display:inline-block;white-space:nowrap}
 .slink .sarrow{width:.78em;height:.78em;margin-left:.18em;vertical-align:-.02em;stroke:var(--text);stroke-width:2.4;transition:stroke .3s,transform .3s}
 .slink:hover .sarrow,.slink:focus-visible .sarrow{stroke:var(--hov);transform:translate(.05em,-.05em)}
+.slink .dg{width:.66em}
