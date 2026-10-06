@@ -852,15 +852,17 @@ function cChat(m) {
     const io = new IntersectionObserver(
       (es) =>
         es.forEach((e) => {
-          if (e.isIntersecting) {
-            io.disconnect()
-            if (document.activeElement === document.body || !document.activeElement) focusIn()
-          }
+          if (e.isIntersecting && !inp.disabled && (document.activeElement === document.body || !document.activeElement))
+            focusIn()
         }),
-      { threshold: 0.6 }
+      { threshold: 0.3 }
     )
     io.observe(frame)
     cOffs.push(() => io.disconnect())
+    frame.addEventListener('click', (e) => {
+      if (inp.disabled || window.getSelection().toString()) return
+      if (!e.target.closest('button, a, input, textarea')) focusIn()
+    })
   }
 }
 
