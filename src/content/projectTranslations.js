@@ -33,7 +33,7 @@ export const PROJECT_TRANSLATIONS = {
     'vitezkurtos-hu': {
       summary: 'ERDÉLYI KÜRTŐSKALÁCS MANUFAKTÚRA',
       description:
-        'A Vitéz Kürtős 2000 óta süti a hungarikumnak számító kürtőskalácsot egy székelyudvarhelyi családi recept alapján.\n\nA webshop négy helyszínt fog össze: kettőt a Budapesti Állatkertben, egyet Tihanyban, valamint a bemutatótermet. Mellettük fut a Vitéz Gastro termékvonal is: hargitai bükkfaszén és a saját Bake\'n\'Roll grill, EU-s kiszállítással.\n\nEgyedi rendelési logika kezeli a helyszínfüggő kiszállítást és átvételt, a szezonális ízeket, az utalványokat, a workshopfoglalást és a törzsvásárlói programot.'
+        'A Vitéz Kürtős 2000 óta süti a hungarikumnak számító kürtőskalácsot egy székelyudvarhelyi családi recept alapján.\n\nA webshop négy helyszínt fog össze: kettőt a Budapesti Állatkertben, egy budapesti bemutatótermet és egy tihanyi üzletet. Mellettük fut a Vitéz Gastro termékvonal is: hargitai bükkfaszén és a saját Bake\'n\'Roll grill, EU-s kiszállítással.\n\nEgyedi rendelési logika kezeli a helyszínfüggő kiszállítást és átvételt, a szezonális ízeket, az utalványokat, a workshopfoglalást és a törzsvásárlói programot.'
     }
   }
 }
