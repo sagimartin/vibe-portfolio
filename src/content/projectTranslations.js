@@ -33,7 +33,7 @@ export const PROJECT_TRANSLATIONS = {
     'vitezkurtos-hu': {
       summary: 'ERDÉLYI KÜRTŐSKALÁCS MANUFAKTÚRA',
       description:
-        'A Vitéz Kürtős 2000 óta süti a kürtőskalácsot egy erdélyi, székelyudvarhelyi családi recept alapján, és a termék ma már hivatalos hungarikum státuszt visel.\n\nA webshop három fizikai helyszínt fog össze: kettőt a Budapesti Állatkerten belül — az Édes Mackót, az ország első kürtőskalács-cukrászdáját, és az eredeti Vitéz Kürtős Kuckó kioszkot, az állatkert 16 éves partnerét —, valamint egy balatoni üzletet Tihanyban. Az oldalon nyomon követhetők a legfrissebb hírek és a márka által szervezett fesztiválok is.\n\nEmellett fut a Vitéz Gastro termékvonal is: a vezető éttermek által is használt hargitai bükkfaszén, illetve a márka saját Bake\'n\'Roll házi grillje, amelyeket országosan és az EU-n belül is kiszállítanak.\n\nEgyedi fejlesztésű rendelési logika kezeli a helyszínfüggő kiszállítást és átvételt, a szezonális ízeket, az ajándékutalványokat, a workshopfoglalást és egy több ezer tagot számláló törzsvásárlói programot.'
+        'A Vitéz Kürtős 2000 óta süti a hungarikumnak számító kürtőskalácsot egy székelyudvarhelyi családi recept alapján.\n\nA webshop három helyszínt fog össze, kettőt a Budapesti Állatkertben és egyet Tihanyban. Mellettük fut a Vitéz Gastro termékvonal is: hargitai bükkfaszén és a saját Bake\'n\'Roll grill, EU-s kiszállítással.\n\nEgyedi rendelési logika kezeli a helyszínfüggő kiszállítást és átvételt, a szezonális ízeket, az utalványokat, a workshopfoglalást és a törzsvásárlói programot.'
     }
   }
 }
