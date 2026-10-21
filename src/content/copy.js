@@ -6,7 +6,7 @@ export const COPY = {
       greeting: 'Hello.',
       beforeName: "I'm ",
       afterName: '',
-      roles: ['Shopify Partner', 'Frontend Developer', 'Vibe Coder'],
+      roles: ['Shopify Select Partner', 'Frontend Developer', 'Vibe Coder'],
       scroll: 'Scroll'
     },
     work: {
@@ -20,7 +20,7 @@ export const COPY = {
       title: 'My projects\nin numbers.',
       ordersLabel: 'Orders',
       valueLabel: 'Estimated gross sales',
-      ratingLabel: 'Shopify Partner rating',
+      ratingLabel: 'Shopify Select Partner rating',
       ratingValue: '5.0',
       ratingNote: '4 reviews on Shopify Partners',
       ratingUrl: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v'
@@ -46,7 +46,7 @@ export const COPY = {
       greeting: 'Szia.',
       beforeName: '',
       afterName: ' vagyok',
-      roles: ['Shopify Partner', 'Frontend fejlesztő', 'Vibe Coder'],
+      roles: ['Shopify Select Partner', 'Frontend fejlesztő', 'Vibe Coder'],
       scroll: 'Görgess'
     },
     work: {
@@ -60,7 +60,7 @@ export const COPY = {
       title: 'Projektjeim\nszámokban.',
       ordersLabel: 'Rendelések',
       valueLabel: 'Becsült bruttó értékesítés',
-      ratingLabel: 'Shopify Partner értékelés',
+      ratingLabel: 'Shopify Select Partner értékelés',
       ratingValue: '5.0',
       ratingNote: '4 értékelés a Shopify Partners oldalon',
       ratingUrl: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v'
