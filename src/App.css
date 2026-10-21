@@ -348,7 +348,9 @@ textarea,input:not([type=checkbox]):not([type=radio]){cursor:text}
 .ft-roll a{white-space:nowrap}
 @media (min-width:861px){
 .ft-roll a{font-size:clamp(30px,4.6vw,64px)}
-.ft-roll .ft-uphold{align-items:flex-end}
+.ft-roll{align-items:stretch}
+.ft-roll .ft-uphold{align-items:flex-end;justify-content:space-between;padding-top:0}
+.ft-badge{margin-top:0;margin-bottom:-12px}
 }
 .langpill button,.dbody .cta.fill{position:relative}
 .langpill button::after,.dbody .cta.fill::after{content:"";position:absolute;inset:-11px -8px}
