@@ -33,7 +33,6 @@ export const COPY = {
       top: 'Back to top',
       credits: '© {year} @sagimartin',
       socials: [
-        { label: 'GitHub', href: 'https://github.com/sagimartin' },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' },
         { label: 'Shopify Partners', href: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v' }
       ]
@@ -73,7 +72,6 @@ export const COPY = {
       top: 'Vissza a tetejére',
       credits: '© {year} @sagimartin',
       socials: [
-        { label: 'GitHub', href: 'https://github.com/sagimartin' },
         { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sagimartin/' },
         { label: 'Shopify Partners', href: 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v' }
       ]
