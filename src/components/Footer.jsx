@@ -2,6 +2,8 @@ import LanguageSwitch from './LanguageSwitch.jsx'
 import ThemeSwitch from './ThemeSwitch.jsx'
 import { ArrowNE, ArrowUp } from './icons.jsx'
 import { prefersReducedMotion } from '../lib/motion.js'
+import badgeBlack from '../assets/shopify_select_partner_black.svg'
+import badgeWhite from '../assets/shopify_select_partner_white.svg'
 
 const EMAIL = 'hello@sagimartin.com'
 
@@ -55,6 +57,10 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
               <ArrowUp />
             </span>
           </button>
+          <span className="ft-badge">
+            <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
+            <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
+          </span>
         </div>
         <nav>
           <RollLink href={'mailto:' + EMAIL} label="Mail" />

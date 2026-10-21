@@ -220,6 +220,10 @@ html{scroll-behavior:auto}
 footer#foot{border-top:0;padding:0;color:var(--muted);font-size:14px;position:relative;background:var(--bg)}
 .ft-in{width:min(1200px,85vw);margin-inline:auto}
 .ft-bar{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;padding-block:22px;border-top:1px solid var(--border)}
+.ft-badge{margin-top:18px}
+.ft-badge img{height:76px;width:auto}
+.ft-badge .l{display:var(--logo-l)}
+.ft-badge .d{display:var(--logo-d)}
 .ft-prefs{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .ft-roll{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;padding-block:56px 36px;align-items:center}
 .ft-roll nav{display:flex;flex-direction:column;gap:4px}
@@ -381,6 +385,11 @@ html{background:var(--bg)}
 
 /* the scroll hint appears once all three roles have been typed out */
 .scrollhint:not(.ready){opacity:0;pointer-events:none}
+.hbadge{position:absolute;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:block;transition:opacity .6s var(--ease)}
+.hbadge:not(.ready),.hbadge.gone{opacity:0}
+.hbadge img{display:block;height:clamp(64px,8vw,92px);width:auto}
+.hbadge .l{display:var(--logo-l)}
+.hbadge .d{display:var(--logo-d)}
 
 /* phones: every logo gets a similar visual area (from its aspect ratio), centred at the top */
 @media (max-width:768px){
