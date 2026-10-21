@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { prefersReducedMotion, goToSection } from '../lib/motion.js'
-import badgeBlack from '../assets/shopify_select_partner_black.svg'
-import badgeWhite from '../assets/shopify_select_partner_white.svg'
 
 function Hero({ strings, scrollLabel, ariaLabel }) {
   const [line1On, setLine1On] = useState(false)
@@ -128,10 +126,6 @@ function Hero({ strings, scrollLabel, ariaLabel }) {
           </div>
         </div>
       </div>
-      <span className={'hbadge' + (hintReady ? ' ready' : '') + (scrolled ? ' gone' : '')}>
-        <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
-        <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
-      </span>
       <button
         type="button"
         className={'scrollhint' + (hintReady ? ' ready' : '') + (scrolled ? ' gone' : '')}
