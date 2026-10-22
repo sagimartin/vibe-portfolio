@@ -7,7 +7,7 @@ import {
   formatGroupedNumber,
   getLiveStats
 } from '../lib/liveStats.js'
-import { prefersReducedMotion } from '../lib/motion.js'
+import { prefersReducedMotion, supportsScrollTimeline } from '../lib/motion.js'
 
 function useVisible(threshold) {
   const ref = useRef(null)
@@ -47,7 +47,7 @@ function Snapshot({ strings, language, ariaLabel }) {
   }, [])
 
   useEffect(() => {
-    if (prefersReducedMotion()) return undefined
+    if (prefersReducedMotion() || supportsScrollTimeline()) return undefined
 
     function slide() {
       const vh = window.innerHeight

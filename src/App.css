@@ -47,7 +47,7 @@ section{scroll-margin-top:72px}
 .whint{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);padding-bottom:10px}
 .whint i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--border);font-style:normal;color:var(--text);animation:nudge 2.2s var(--ease) infinite}
 @keyframes nudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
-.rows{margin-inline:calc(50% - 50vw);border-top:1px solid var(--border)}
+.rows{margin-inline:calc(50% - 50vw);border-top:1px solid var(--border);overflow-anchor:none}
 .item{border-bottom:1px solid var(--border)}
 .row{display:block;width:100%;position:relative;overflow:hidden;background:none;border:0;color:var(--text);padding:clamp(10px,1.8vw,20px) 0;text-align:left;font:inherit;transition:background .3s var(--ease)}
 .row .t{display:flex;gap:.35em;align-items:center;width:max-content;position:relative;left:50%;font:600 clamp(48px,11vw,170px)/1 var(--font-display);letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;will-change:transform;z-index:1}
@@ -58,6 +58,24 @@ section{scroll-margin-top:72px}
 .detail.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s}
 @media (max-width:768px){
 .detail{--dur:.9s;--detail-ease:cubic-bezier(.33,1,.68,1)}
+}
+/* the sliding titles follow the page scroll in CSS, so they stay in step with the page on phones;
+   without support the scroll handlers in Work.jsx and Snapshot.jsx do the same job */
+@keyframes rowslide{from{transform:translateX(calc(-50% + 22.5vw))}to{transform:translateX(calc(-50% - 22.5vw))}}
+@keyframes bigslide{from{transform:translateX(3vw)}to{transform:translateX(-3vw)}}
+@supports (animation-timeline:view()){
+/* a body with overflow-x:hidden becomes a (non-scrolling) scroller and the timelines would watch it instead of the page;
+   html already clips horizontal overflow */
+body{overflow-x:visible}
+.row{view-timeline:--rowv block}
+.row .t{transform:translateX(-50%);animation:rowslide linear both;animation-timeline:--rowv}
+.item:nth-child(even) .row .t{animation-direction:reverse}
+.srow{view-timeline:--srowv block}
+.sbig{animation:bigslide linear both;animation-timeline:--srowv}
+.srow:nth-child(even) .sbig{animation-direction:reverse}
+}
+@media (prefers-reduced-motion:reduce){
+.row .t,.sbig{animation:none}
 }
 .detail .clip{overflow:hidden;min-height:0}
 .dwrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px;padding-block:44px 52px}

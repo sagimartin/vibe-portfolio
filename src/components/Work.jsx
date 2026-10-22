@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowNE } from './icons.jsx'
-import { prefersReducedMotion, slideToNode } from '../lib/motion.js'
+import { prefersReducedMotion, slideToNode, supportsScrollTimeline } from '../lib/motion.js'
 
 const isVector = (src) => /\.svg(\?|$)/.test(src || '') || /^data:image\/svg/.test(src || '')
 
@@ -10,6 +10,8 @@ function Work({ strings, projects, ariaLabel }) {
   const itemRefs = useRef([])
 
   useEffect(() => {
+    if (supportsScrollTimeline()) return undefined
+
     let frame = 0
 
     function slide() {
