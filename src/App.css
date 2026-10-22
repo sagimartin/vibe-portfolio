@@ -66,7 +66,6 @@ section{scroll-margin-top:72px}
 @media (min-width:2800px){.row .t>:nth-child(n+10){display:revert}.row .t>:nth-child(n+14){display:none}}
 @media (min-width:4000px){.row .t>:nth-child(n+14){display:revert}}
 @keyframes rowslide{from{transform:translateX(calc(-50% + 22.5vw))}to{transform:translateX(calc(-50% - 22.5vw))}}
-@keyframes bigslide{from{transform:translateX(3vw)}to{transform:translateX(-3vw)}}
 @supports (animation-timeline:view()){
 /* a body with overflow-x:hidden becomes a (non-scrolling) scroller and the timelines would watch it instead of the page;
    html already clips horizontal overflow */
@@ -74,12 +73,9 @@ body{overflow-x:visible}
 .row{view-timeline:--rowv block}
 .row .t{animation:rowslide linear both;animation-timeline:--rowv}
 .item:nth-child(even) .row .t{animation-direction:reverse}
-.srow{view-timeline:--srowv block}
-.sbig{animation:bigslide linear both;animation-timeline:--srowv}
-.srow:nth-child(even) .sbig{animation-direction:reverse}
 }
 @media (prefers-reduced-motion:reduce){
-.row .t,.sbig{animation:none}
+.row .t{animation:none}
 }
 .detail .clip{overflow:hidden;min-height:0}
 .dwrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px;padding-block:44px 52px}
@@ -125,7 +121,7 @@ html{scroll-behavior:auto}
 .sgutter{padding-inline:calc((100vw - min(1200px,85vw))/2)}
 .slab{display:inline-flex;align-items:center;gap:10px;font:500 11px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .slab::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.sbig{display:block;font:600 clamp(64px,14vw,210px)/.92 var(--font-display);letter-spacing:-.06em;font-variant-numeric:tabular-nums;white-space:nowrap;will-change:transform}
+.sbig{display:block;font:600 clamp(64px,14vw,210px)/.92 var(--font-display);letter-spacing:-.06em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sbig small{margin-left:.05em;font-size:.55em;color:var(--muted);letter-spacing:0}
 .srows{margin-inline:calc(50% - 50vw);border-top:1px solid var(--border)}
 .srow{position:relative;overflow:hidden;border-bottom:1px solid var(--border);padding-block:clamp(22px,3.4vw,44px)}
