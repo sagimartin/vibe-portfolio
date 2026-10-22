@@ -10,26 +10,42 @@ function Work({ strings, projects, ariaLabel }) {
   const itemRefs = useRef([])
 
   useEffect(() => {
+    let frame = 0
+
     function slide() {
       const vh = window.innerHeight
+      const travel = window.innerWidth * 0.45
       const direction = (i) => (i % 2 ? -1 : 1)
+      const visible = []
 
+      // measure every row first, then write: interleaving reads and writes re-lays out the page once per row
       trackRefs.current.forEach((track, i) => {
         if (!track) return
         const rect = track.parentNode.getBoundingClientRect()
         if (rect.bottom < -50 || rect.top > vh + 50) return
-        const progress = (rect.top + rect.height / 2) / vh - 0.5
-        track.style.transform =
-          'translateX(calc(-50% + ' + progress * direction(i) * window.innerWidth * 0.45 + 'px))'
+        visible.push([track, i, (rect.top + rect.height / 2) / vh - 0.5])
+      })
+
+      visible.forEach(([track, i, progress]) => {
+        track.style.transform = 'translateX(calc(-50% + ' + progress * direction(i) * travel + 'px))'
+      })
+    }
+
+    function schedule() {
+      if (frame) return
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        slide()
       })
     }
 
     slide()
-    window.addEventListener('scroll', slide, { passive: true })
-    window.addEventListener('resize', slide)
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
     return () => {
-      window.removeEventListener('scroll', slide)
-      window.removeEventListener('resize', slide)
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
     }
   }, [projects.length])
 

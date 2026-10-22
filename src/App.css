@@ -54,8 +54,11 @@ section{scroll-margin-top:72px}
 .row .t i{width:.22em;height:.22em;border-radius:50%;background:var(--muted);flex:none;transition:background .3s}
 .row:hover .t i,.row[aria-expanded="true"] .t i{background:var(--accent)}
 .item{scroll-margin-top:88px}
-.detail{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .5s var(--ease),visibility 0s .5s;background:color-mix(in srgb,var(--card) 55%,transparent)}
-.detail.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .5s var(--ease),visibility 0s}
+.detail{--dur:.5s;--detail-ease:var(--ease);display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s var(--dur);background:color-mix(in srgb,var(--card) 55%,transparent)}
+.detail.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s}
+@media (max-width:768px){
+.detail{--dur:.9s;--detail-ease:cubic-bezier(.33,1,.68,1)}
+}
 .detail .clip{overflow:hidden;min-height:0}
 .dwrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px;padding-block:44px 52px}
 .dhead{display:flex;flex-direction:column;gap:26px;align-items:center;justify-content:center;align-self:stretch}
