@@ -241,10 +241,10 @@ footer#foot{border-top:0;padding:0;color:var(--muted);font-size:14px;position:re
 @media (max-width:860px){
 .ft-roll{grid-template-columns:1fr}
 .ft-uphold .ft-badge{display:none}
-.ft-bar .ft-badge-bar{display:block;order:1;margin:0}
+.ft-bar .ft-badge-bar{display:block;order:1;margin:0 0 0 -8.7px}
 .ft-bar .ft-badge-bar img{height:56px}
 .ft-bar .ft-prefs{order:2}
-.ft-bar .ft-credits{order:3;flex-basis:100%}
+.ft-bar .ft-credits{order:3;flex-basis:100%;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){
 .ft-spin svg:not(.ico){animation:none}
