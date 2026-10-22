@@ -66,6 +66,7 @@ section{scroll-margin-top:72px}
 @media (min-width:2800px){.row .t>:nth-child(n+10){display:revert}.row .t>:nth-child(n+14){display:none}}
 @media (min-width:4000px){.row .t>:nth-child(n+14){display:revert}}
 @keyframes rowslide{from{transform:translateX(calc(-50% + 22.5vw))}to{transform:translateX(calc(-50% - 22.5vw))}}
+@keyframes bigslide{from{margin-left:3vw}to{margin-left:-3vw}}
 @supports (animation-timeline:view()){
 /* a body with overflow-x:hidden becomes a (non-scrolling) scroller and the timelines would watch it instead of the page;
    html already clips horizontal overflow */
@@ -73,9 +74,12 @@ body{overflow-x:visible}
 .row{view-timeline:--rowv block}
 .row .t{animation:rowslide linear both;animation-timeline:--rowv}
 .item:nth-child(even) .row .t{animation-direction:reverse}
+.srow{view-timeline:--srowv block}
+.sbig{animation:bigslide linear both;animation-timeline:--srowv}
+.srow:nth-child(even) .sbig{animation-direction:reverse}
 }
 @media (prefers-reduced-motion:reduce){
-.row .t{animation:none}
+.row .t,.sbig{animation:none}
 }
 .detail .clip{overflow:hidden;min-height:0}
 .dwrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px 56px;padding-block:44px 52px}
