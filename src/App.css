@@ -54,11 +54,8 @@ section{scroll-margin-top:72px}
 .row .t i{width:.22em;height:.22em;border-radius:50%;background:var(--muted);flex:none;transition:background .3s}
 .row:hover .t i,.row[aria-expanded="true"] .t i{background:var(--accent)}
 .item{scroll-margin-top:88px}
-.detail{--dur:.5s;--detail-ease:var(--ease);display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s var(--dur);background:color-mix(in srgb,var(--card) 55%,transparent)}
+.detail{--dur:.9s;--detail-ease:cubic-bezier(.33,1,.68,1);display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s var(--dur);background:color-mix(in srgb,var(--card) 55%,transparent)}
 .detail.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows var(--dur) var(--detail-ease),visibility 0s}
-@media (max-width:768px){
-.detail{--dur:.9s;--detail-ease:cubic-bezier(.33,1,.68,1)}
-}
 /* the sliding titles follow the page scroll in CSS, so they stay in step with the page on phones;
    browsers without animation-timeline keep them still rather than moving them from a scroll handler,
    which always lags behind the scrolling on touch devices */
