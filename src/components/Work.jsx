@@ -64,10 +64,10 @@ function Work({ strings, projects, ariaLabel }) {
                 onClick={() => toggle(project.id, index)}
               >
                 <span className="t" aria-hidden="true">
-                  {[0, 1, 2].map((k) => (
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((k) => (
                     <Fragment key={k}>
                       <b>{project.title}</b>
-                      {k < 2 ? <i /> : null}
+                      {k < 8 ? <i /> : null}
                     </Fragment>
                   ))}
                 </span>
