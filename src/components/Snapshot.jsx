@@ -7,7 +7,7 @@ import {
   formatGroupedNumber,
   getLiveStats
 } from '../lib/liveStats.js'
-import { prefersReducedMotion, supportsScrollTimeline } from '../lib/motion.js'
+import { prefersReducedMotion } from '../lib/motion.js'
 
 function useVisible(threshold) {
   const ref = useRef(null)
@@ -35,8 +35,6 @@ function useVisible(threshold) {
 
 function Snapshot({ strings, language, ariaLabel }) {
   const [stats, setStats] = useState(() => getLiveStats())
-  const bigRefs = useRef([])
-  const rowRefs = useRef([])
   const [ordersRef, ordersVisible] = useVisible(0.5)
   const [valueRef, valueVisible] = useVisible(0.5)
   const [ratingRef, ratingVisible] = useVisible(0.5)
@@ -44,31 +42,6 @@ function Snapshot({ strings, language, ariaLabel }) {
   useEffect(() => {
     const id = window.setInterval(() => setStats(getLiveStats()), 60000)
     return () => window.clearInterval(id)
-  }, [])
-
-  useEffect(() => {
-    if (prefersReducedMotion() || supportsScrollTimeline()) return undefined
-
-    function slide() {
-      const vh = window.innerHeight
-
-      bigRefs.current.forEach((big, i) => {
-        const row = rowRefs.current[i]
-        if (!big || !row) return
-        const rect = row.getBoundingClientRect()
-        if (rect.bottom < -50 || rect.top > vh + 50) return
-        const progress = (rect.top + rect.height / 2) / vh - 0.5
-        big.style.transform = 'translateX(' + progress * (i % 2 ? -1 : 1) * window.innerWidth * 0.06 + 'px)'
-      })
-    }
-
-    slide()
-    window.addEventListener('scroll', slide, { passive: true })
-    window.addEventListener('resize', slide)
-    return () => {
-      window.removeEventListener('scroll', slide)
-      window.removeEventListener('resize', slide)
-    }
   }, [])
 
   const ordersText = formatGroupedNumber(stats.orders)
@@ -85,19 +58,13 @@ function Snapshot({ strings, language, ariaLabel }) {
           <h2 className="stitle">{strings.title}</h2>
         </div>
         <div className="srows">
-          <div
-            className="srow"
-            ref={(node) => {
-              rowRefs.current[0] = node
-            }}
-          >
+          <div className="srow">
             <div className="sgutter">
               <div className="sin">
                 <span className="slab">{strings.ordersLabel}</span>
                 <strong
                   className="sbig"
                   ref={(node) => {
-                    bigRefs.current[0] = node
                     ordersRef.current = node
                   }}
                 >
@@ -107,19 +74,13 @@ function Snapshot({ strings, language, ariaLabel }) {
               </div>
             </div>
           </div>
-          <div
-            className="srow"
-            ref={(node) => {
-              rowRefs.current[1] = node
-            }}
-          >
+          <div className="srow">
             <div className="sgutter">
               <div className="sin">
                 <span className="slab">{strings.valueLabel}</span>
                 <strong
                   className="sbig"
                   ref={(node) => {
-                    bigRefs.current[1] = node
                     valueRef.current = node
                   }}
                 >
@@ -128,19 +89,13 @@ function Snapshot({ strings, language, ariaLabel }) {
               </div>
             </div>
           </div>
-          <div
-            className="srow"
-            ref={(node) => {
-              rowRefs.current[2] = node
-            }}
-          >
+          <div className="srow">
             <div className="sgutter">
               <div className="sin">
                 <span className="slab">{strings.ratingLabel}</span>
                 <strong
                   className="sbig"
                   ref={(node) => {
-                    bigRefs.current[2] = node
                     ratingRef.current = node
                   }}
                 >

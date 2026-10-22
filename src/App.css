@@ -60,7 +60,9 @@ section{scroll-margin-top:72px}
 .detail{--dur:.9s;--detail-ease:cubic-bezier(.33,1,.68,1)}
 }
 /* the sliding titles follow the page scroll in CSS, so they stay in step with the page on phones;
-   without support the scroll handlers in Work.jsx and Snapshot.jsx do the same job */
+   browsers without animation-timeline keep them still rather than moving them from a scroll handler,
+   which always lags behind the scrolling on touch devices */
+.row .t{transform:translateX(-50%)}
 @keyframes rowslide{from{transform:translateX(calc(-50% + 22.5vw))}to{transform:translateX(calc(-50% - 22.5vw))}}
 @keyframes bigslide{from{transform:translateX(3vw)}to{transform:translateX(-3vw)}}
 @supports (animation-timeline:view()){
@@ -68,7 +70,7 @@ section{scroll-margin-top:72px}
    html already clips horizontal overflow */
 body{overflow-x:visible}
 .row{view-timeline:--rowv block}
-.row .t{transform:translateX(-50%);animation:rowslide linear both;animation-timeline:--rowv}
+.row .t{animation:rowslide linear both;animation-timeline:--rowv}
 .item:nth-child(even) .row .t{animation-direction:reverse}
 .srow{view-timeline:--srowv block}
 .sbig{animation:bigslide linear both;animation-timeline:--srowv}

@@ -12,8 +12,8 @@ import celeniBlack from '../assets/celeni_black.png'
 import celeniWhite from '../assets/celeni_white.png'
 import vitezkurtosBlack from '../assets/vitezkurtos_black.svg'
 import vitezkurtosWhite from '../assets/vitezkurtos_white.svg'
-import aniboxBlack from '../assets/anibox_black.svg'
-import aniboxWhite from '../assets/anibox_white.svg'
+import aniboxBlack from '../assets/anibox_black.png'
+import aniboxWhite from '../assets/anibox_white.png'
 
 export const PROJECT_IMAGES = {
   smellgo: { light: smellgoBlack, dark: smellgoWhite },

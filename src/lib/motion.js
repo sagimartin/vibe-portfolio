@@ -4,12 +4,6 @@ export function prefersReducedMotion() {
     : false
 }
 
-/* Browsers that can run scroll-linked animations in CSS (animation-timeline) animate the sliding
-   row titles off the main thread; everything else falls back to the scroll handlers in the components. */
-export function supportsScrollTimeline() {
-  return typeof CSS !== 'undefined' && CSS.supports ? CSS.supports('animation-timeline: view()') : false
-}
-
 export function scrollBehavior() {
   return prefersReducedMotion() ? 'auto' : 'smooth'
 }
