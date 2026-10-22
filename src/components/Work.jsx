@@ -132,7 +132,8 @@ function Work({ strings, projects, ariaLabel }) {
                               className={isVector(project.imageLight) ? 'l vec' : 'l'}
                               src={project.imageLight}
                               alt={project.title}
-                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
                             />
                           ) : null}
                           {project.imageDark ? (
@@ -140,7 +141,8 @@ function Work({ strings, projects, ariaLabel }) {
                               className={isVector(project.imageDark) ? 'd vec' : 'd'}
                               src={project.imageDark}
                               alt=""
-                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
                             />
                           ) : null}
                         </div>
