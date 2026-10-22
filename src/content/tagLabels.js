@@ -16,7 +16,9 @@ export const TAG_LABELS = {
     'Pre-order': 'Pre-order',
     'Apple Pay': 'Apple Pay',
     'Google Pay': 'Google Pay',
-    'Shop Pay': 'Shop Pay'
+    'Shop Pay': 'Shop Pay',
+    'Zest theme': 'Zest theme',
+    'Judge.me': 'Judge.me'
   },
   hu: {
     Shopify: 'Shopify',
@@ -54,6 +56,8 @@ export const TAG_LABELS = {
     Fragrance: 'Illat',
     'Brand storytelling': 'Brand storytelling',
     'Atelier theme': 'Atelier téma',
-    'Pre-order': 'Előrendelés'
+    'Pre-order': 'Előrendelés',
+    'Zest theme': 'Zest téma',
+    'Judge.me': 'Judge.me'
   }
 }

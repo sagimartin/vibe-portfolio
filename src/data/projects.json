@@ -4,7 +4,7 @@
       "id": "smellgo-hu",
       "title": "SmellGo.hu",
       "summary": "Custom car air fresheners",
-      "description": "The website lets customers turn their own photos into premium, personalized car air fresheners. From seamless photo uploads to custom scent selection, the experience is designed to feel effortless and playful.\n\nYou might recognize the brand from 🦈 'Shark Tank Hungary'.",
+      "description": "The website lets customers turn their own photos into premium, personalized car air fresheners. From seamless photo uploads to custom scent selection, the experience is designed to feel effortless and playful.\n\nYou might recognize the brand from 'Shark Tank Hungary'.",
       "tags": [
         "Shopify",
         "Debutify theme",
@@ -152,6 +152,21 @@
       "badge": "Shopify",
       "imageKey": "vitezkurtos",
       "url": "https://vitezkurtos.hu"
+    },
+    {
+      "id": "anibox-hu",
+      "title": "Anibox.hu",
+      "summary": "Personalized gifts",
+      "description": "Every gift at Anibox is unique, because you can personalize it yourself.\n\nPlanning a wedding, an anniversary, Christmas or a baby shower? Want to surprise someone in your family? A name, a date, a photo or a few words of your own make the occasion unforgettable.",
+      "tags": [
+        "Shopify",
+        "Zest theme",
+        "Personalization",
+        "Judge.me"
+      ],
+      "badge": "Shopify",
+      "imageKey": "anibox",
+      "url": "https://anibox.hu"
     }
   ]
 }

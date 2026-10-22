@@ -12,6 +12,8 @@ import celeniBlack from '../assets/celeni_black.png'
 import celeniWhite from '../assets/celeni_white.png'
 import vitezkurtosBlack from '../assets/vitezkurtos_black.svg'
 import vitezkurtosWhite from '../assets/vitezkurtos_white.svg'
+import aniboxBlack from '../assets/anibox_black.svg'
+import aniboxWhite from '../assets/anibox_white.svg'
 
 export const PROJECT_IMAGES = {
   smellgo: { light: smellgoBlack, dark: smellgoWhite },
@@ -20,7 +22,8 @@ export const PROJECT_IMAGES = {
   taati: { light: taatiBlack, dark: taatiWhite },
   mistyMonday: { light: mistyMondayBlack, dark: mistyMondayWhite },
   celeni: { light: celeniBlack, dark: celeniWhite },
-  vitezkurtos: { light: vitezkurtosBlack, dark: vitezkurtosWhite }
+  vitezkurtos: { light: vitezkurtosBlack, dark: vitezkurtosWhite },
+  anibox: { light: aniboxBlack, dark: aniboxWhite }
 }
 
 // natural aspect ratios (width / height) of the logo files, plus an optical size correction.
@@ -32,5 +35,6 @@ export const PROJECT_LOGO_FIT = {
   taati: { ratio: 0.75, scale: 1.6 },
   mistyMonday: { ratio: 11.1 },
   celeni: { ratio: 3.67 },
-  vitezkurtos: { ratio: 5.05 }
+  vitezkurtos: { ratio: 5.05 },
+  anibox: { ratio: 4.07 }
 }
