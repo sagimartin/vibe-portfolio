@@ -6,6 +6,7 @@ import badgeBlack from '../assets/shopify_select_partner_black.svg'
 import badgeWhite from '../assets/shopify_select_partner_white.svg'
 
 const EMAIL = 'hello@sagimartin.com'
+const PARTNER_URL = 'https://www.shopify.com/partners/directory/partner/sagi-martin-e-v'
 
 function RollLink({ href, label, external }) {
   const extra = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
@@ -29,10 +30,10 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
   const credits = strings.credits.replace('{year}', String(new Date().getFullYear()))
 
   const badge = (className) => (
-    <span className={className}>
+    <a className={className} href={PARTNER_URL} target="_blank" rel="noopener noreferrer">
       <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
       <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
-    </span>
+    </a>
   )
 
   function backToTop(event) {
