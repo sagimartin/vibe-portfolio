@@ -16,9 +16,14 @@ export function goToSection(id) {
 let slideFrame = 0
 let stopSlide = null
 
+// a bit longer than the panel's own open/close transition, so the glide never ends before the panel settles
+const GLIDE_MS = 1300
+const easeInOutSine = (t) => (1 - Math.cos(Math.PI * t)) / 2
+
 /* Glides the page so `node` sits at the top of the viewport (respecting its scroll-margin-top).
    The target is re-measured on every frame, so it stays correct while another panel collapses
-   above it. Any wheel / touch / key input hands control back to the user. */
+   above it, and the glide is time-based so it moves the same on every refresh rate.
+   Any wheel / touch / key input hands control back to the user. */
 export function slideToNode(node, collapsingNode) {
   if (!node) return
 
@@ -38,8 +43,7 @@ export function slideToNode(node, collapsingNode) {
   }
 
   const startedAt = performance.now()
-  let settled = 0
-  let y = window.scrollY
+  const startY = window.scrollY
 
   function cancel() {
     window.dispatchEvent(new Event('slide:end'))
@@ -51,15 +55,12 @@ export function slideToNode(node, collapsingNode) {
   }
 
   function frame(now) {
+    const progress = Math.max(0, Math.min(1, (now - startedAt) / GLIDE_MS))
     const target = targetY()
-    const diff = target - y
 
-    y += diff * 0.16
-    window.scrollTo({ top: y, behavior: 'instant' })
+    window.scrollTo({ top: startY + (target - startY) * easeInOutSine(progress), behavior: 'instant' })
 
-    settled = Math.abs(diff) < 0.6 ? settled + 1 : 0
-    if (settled > 6 || now - startedAt > 1600) {
-      window.scrollTo({ top: target, behavior: 'instant' })
+    if (progress >= 1) {
       cancel()
       return
     }
