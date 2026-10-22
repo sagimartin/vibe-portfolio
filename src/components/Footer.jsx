@@ -28,8 +28,8 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
   const ringText = (strings.top.toUpperCase() + ' • ').repeat(2)
   const credits = strings.credits.replace('{year}', String(new Date().getFullYear()))
 
-  const badge = (
-    <span className="ft-badge">
+  const badge = (className) => (
+    <span className={className}>
       <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
       <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
     </span>
@@ -64,7 +64,7 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
               <ArrowUp />
             </span>
           </button>
-          {badge}
+          {badge('ft-badge')}
         </div>
         <nav>
           <RollLink href={'mailto:' + EMAIL} label="Mail" />
@@ -74,13 +74,13 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
         </nav>
       </div>
       <div className="ft-in ft-bar">
-        <span>{credits}</span>
+        {badge('ft-badge ft-badge-bar')}
+        <span className="ft-credits">{credits}</span>
         <div className="ft-prefs">
           <LanguageSwitch language={language} onChange={onLanguageChange} label={barStrings.language} />
           <ThemeSwitch label={barStrings.theme} />
         </div>
       </div>
-      <div className="ft-in ft-badge-end">{badge}</div>
     </footer>
   )
 }
