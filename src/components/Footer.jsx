@@ -28,6 +28,13 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
   const ringText = (strings.top.toUpperCase() + ' • ').repeat(2)
   const credits = strings.credits.replace('{year}', String(new Date().getFullYear()))
 
+  const badge = (
+    <span className="ft-badge">
+      <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
+      <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
+    </span>
+  )
+
   function backToTop(event) {
     event.preventDefault()
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
@@ -57,10 +64,7 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
               <ArrowUp />
             </span>
           </button>
-          <span className="ft-badge">
-            <img className="l" src={badgeBlack} alt="Shopify Select Partner" width="262" height="116" />
-            <img className="d" src={badgeWhite} alt="" aria-hidden="true" width="262" height="116" />
-          </span>
+          {badge}
         </div>
         <nav>
           <RollLink href={'mailto:' + EMAIL} label="Mail" />
@@ -76,6 +80,7 @@ function Footer({ strings, language, onLanguageChange, barStrings }) {
           <ThemeSwitch label={barStrings.theme} />
         </div>
       </div>
+      <div className="ft-in ft-badge-end">{badge}</div>
     </footer>
   )
 }
