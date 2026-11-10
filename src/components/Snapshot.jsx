@@ -89,7 +89,7 @@ function Snapshot({ strings, language, ariaLabel }) {
               </div>
             </div>
           </div>
-          <div className="srow">
+          <div className="srow" hidden>
             <div className="sgutter">
               <div className="sin">
                 <span className="slab">{strings.ratingLabel}</span>
